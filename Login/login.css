@@ -1,0 +1,9 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bottone{
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #727273 !important;
+}
