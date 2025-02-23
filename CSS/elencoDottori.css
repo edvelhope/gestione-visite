@@ -1,0 +1,15 @@
+/* Aggiungi margini alle card */
+.card {
+    margin: 10px;
+  }
+  
+  .card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card .btn {
+    margin-top: 10px;
+  }
+  
