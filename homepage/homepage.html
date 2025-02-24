@@ -17,8 +17,10 @@
       crossorigin="anonymous"
     />
     <link href="homepage.css" rel="stylesheet" />
+    <link href="../navbar/navbar.css" rel="stylesheet" />
   </head>
   <body>
+    <div id="navbar"></div>
     <header class="py-5 border-bottom mb-4 header-bg">
       <div class="container">
         <div class="text-center my-5">
@@ -39,19 +41,22 @@
             <a href="#!"
               ><img
                 class="card-img-top"
-                src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg"
-                alt="..."
+                src="../homepage/assets/doc.png"
+                alt="banner"
             /></a>
             <div class="card-body">
               <div class="small text-muted">January 1, 2023</div>
-              <h2 class="card-title">Featured Post Title</h2>
+              <h2 class="card-title">
+                Ottimizza la Gestione dei Tuoi Pazienti
+              </h2>
               <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a
-                laboriosam. Dicta expedita corporis animi vero voluptate
-                voluptatibus possimus, veniam magni quis!
+                Sei un medico? Digitalizza la tua attività e semplifica la
+                gestione dei pazienti con la nostra piattaforma avanzata!
+                Prenotazioni, cartelle cliniche e comunicazioni in un unico
+                spazio intuitivo. Iscriviti oggi e porta la tua professione al
+                livello successivo!
               </p>
-              <a class="btn btn-custom" href="#!">Read more →</a>
+              <a class="btn btn-custom" href="#!"> Inizia subito →</a>
             </div>
           </div>
           <!-- Nested row for non-featured blog posts-->
@@ -70,11 +75,7 @@
                   aria-label="Enter search term..."
                   aria-describedby="button-search"
                 />
-                <button
-                  class="btn btn-custom"
-                  id="button-search"
-                  type="button"
-                >
+                <button class="btn btn-custom" id="button-search" type="button">
                   Go!
                 </button>
               </div>
@@ -222,5 +223,6 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script src="homepage.js"></script>
   </body>
 </html>
