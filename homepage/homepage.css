@@ -1,0 +1,27 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  background-color: #36d9d9;
+}
+
+.btn-custom {
+  background-color: #2abfbf !important; /* Cambia il colore di sfondo */
+  border-color: #2abfbf !important; /* Cambia il colore del bordo */
+  color: #fff !important; /* Cambia il colore del testo */
+}
+
+.btn-custom:hover {
+  background-color: #269c9c !important; /* Cambia colore al passaggio del mouse */
+  border-color: #269c9c !important;
+}
+
+@media (min-width: 1200px) {
+  .header-bg {
+    background-image: url("../homepage/assets/immagine.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+}
