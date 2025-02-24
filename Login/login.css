@@ -6,4 +6,10 @@ body{
     outline: none !important;
     box-shadow: none !important;
     background-color: #727273 !important;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.2); 
 }
