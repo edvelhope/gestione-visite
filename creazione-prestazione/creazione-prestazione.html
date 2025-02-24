@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="creazione-prestazione.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="creazionePrestazione">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="prestazione">Tipo di Prestazione</label>
+                    <select id="tipoPrestazione" class="form-control">
+                        <option selected>Scegli...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="medico">Nome Medico</label>
+                    <input type="text" class="form-control" id="medico" placeholder="Mario Rossi">
+                </div>
+            </div>
+    
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="costo">Costo (€)</label>
+                    <input type="text" class="form-control" id="costo" placeholder="Inserisci il costo della prestazione">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="durata">Durata (in minuti)</label>
+                    <input type="number" class="form-control" id="durata" placeholder="Durata della prestazione in minuti">
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="descrizione">Descrizione della Prestazione</label>
+                <textarea class="form-control" id="descrizione" rows="6" placeholder="Descrivi brevemente la prestazione offerta."></textarea>
+            </div>
+            <div class="form-group col-m">
+                <label for="luogo">Luogo</label>
+                <select id="luogo" class="form-control">
+                    <option selected>Scegli...</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="orariDisponibili">Orari Disponibili</label>
+                <input type="text" class="form-control" id="orariDisponibili" placeholder="Es. Lunedì 9:00 - 12:00, Mercoledì 15:00 - 18:00">
+            </div>
+    
+            <button type="submit" class="btn btn-primary mt-3">Aggiungi Prestazione</button>
+        </form>
+    </div>
+    
+    
+</body>
+</html>

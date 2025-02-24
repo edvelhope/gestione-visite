@@ -1,0 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.creazionePrestazione {
+    max-width: 900px; 
+    margin: 0 auto;   
+}
