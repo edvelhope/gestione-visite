@@ -1,11 +1,21 @@
+
 .card{
   width: 400px;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+ justify-content: center;
+ align-items: center;
+ border-radius: 20px;
+ overflow: hidden;
+ box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.img{
-  width:100%
+#contenitore{
+  display: flex;
+  justify-content: center;
+}
+img{
+  width: 100%;
+}
+.card-body{
+text-align: left;
 }
 form{
 display: flex;
@@ -15,10 +25,11 @@ justify-content: center;
 
 }
 #dott{
-  border-radius: 20px;border-radius: 20px;
+  border-radius: 20px;
   display: flex;
   justify-content: center; /* Centra orizzontalmente */
   align-items: center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 #invio{
   border-radius: 20px;
@@ -28,12 +39,13 @@ justify-content: center;
 }
 form>#invio:hover{
 }
-#invio,.btn-btn-primary {
+#invio,.btn-btn-primary,button {
   background-color: #2abfbf !important; /* Cambia il colore di sfondo */
   border-color: #2abfbf !important; /* Cambia il colore del bordo */
   color: #fff !important; /* Cambia il colore del testo */
 }
-#invio,.btn-btn-primary {
+#invio,.btn-btn-primary,button {
   background-color: #269c9c !important; /* Cambia colore al passaggio del mouse */
   border-color: #269c9c !important;
+  border-radius: 20px;
 }

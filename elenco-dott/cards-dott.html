@@ -8,26 +8,56 @@
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div>
-   <form action="">
-      <input type="text" id="dott" name="dott" value="scrivi quì">
-      <button id="invio">Invia</button>
-      
-   </form>
-  </div>
+   
+   <form class="doc" novalidate>
+     
+      <div class="nomeins">
+        <label for="validationCustomUsername" class="form-label">Username</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            Please choose a username.
+          </div>
+        </div>
+      </div>
+        <div class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div>
+        <label for="validationCustom05" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="validationCustom05" required>
+        <div class="invalid-feedback">
+          Please provide a valid zip.
+        </div>
+      </div>
+   
+      <div>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form>
+    // Example starter JavaScript
 
 
-
+<div id="contenitore">
  <div class="card">
    <div class="immagine">
-   <img src="card-img.jpg" class="img" alt="">
+    <img src="card-img.jpg" alt="">
    </div>
    <div class="card-body">
-     <h5 class="card-titolo">Card title</h5>
-     <p class="card-testo">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <button class="btn-btn-primary">Go somewhere</button>
+     <div class="titolo">
+       <h1>Dott</h1>
+     </div>
+     <div class="descrizione">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, sunt minima, rerum amet qui, cupiditate pariatur optio repudiandae adipisci accusantium vero sit omnis porro voluptatibus placeat blanditiis mollitia eum quasi!</p>
+     </div>
+     <div class="bottone">
+      <button type="button">Eccoci!</button>
+     </div>
    </div>
  </div>
+</div>
  <script src="cards-dott.js"></script>
 </body>
 </html>
