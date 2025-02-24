@@ -1,0 +1,39 @@
+.card{
+  width: 400px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.img{
+  width:100%
+}
+form{
+display: flex;
+text-align: center;
+margin: 50px;
+justify-content: center;
+
+}
+#dott{
+  border-radius: 20px;border-radius: 20px;
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center;
+}
+#invio{
+  border-radius: 20px;
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center;
+}
+form>#invio:hover{
+}
+#invio,.btn-btn-primary {
+  background-color: #2abfbf !important; /* Cambia il colore di sfondo */
+  border-color: #2abfbf !important; /* Cambia il colore del bordo */
+  color: #fff !important; /* Cambia il colore del testo */
+}
+#invio,.btn-btn-primary {
+  background-color: #269c9c !important; /* Cambia colore al passaggio del mouse */
+  border-color: #269c9c !important;
+}
