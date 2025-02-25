@@ -5,56 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="creazione-prestazione.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-    <div class="creazionePrestazione">
-        <form>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="prestazione">Tipo di Prestazione</label>
-                    <select id="tipoPrestazione" class="form-control">
-                        <option selected>Scegli...</option>
-                        <option>...</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="medico">Nome Medico</label>
-                    <input type="text" class="form-control" id="medico" placeholder="Mario Rossi">
-                </div>
+
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+   Aggiungi visita
+  </button>
+    <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Nuova prestazione</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="creazionePrestazione">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="prestazione">Specializzazione</label>
+                            <select id="tipoPrestazione" class="form-control">
+                                <option selected>Scegli...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="costo">Costo (€)</label>
+                            <input type="text" class="form-control" id="costo" placeholder="Inserisci il costo della prestazione">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="orariDisponibili">Orari Disponibili</label>
+                        <input type="text" class="form-control" id="orariDisponibili" placeholder="Es. Lunedì 9:00 - 12:00, Mercoledì 15:00 - 18:00">
+                    </div>
+            
+                </form>
             </div>
-    
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="costo">Costo (€)</label>
-                    <input type="text" class="form-control" id="costo" placeholder="Inserisci il costo della prestazione">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="durata">Durata (in minuti)</label>
-                    <input type="number" class="form-control" id="durata" placeholder="Durata della prestazione in minuti">
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <label for="descrizione">Descrizione della Prestazione</label>
-                <textarea class="form-control" id="descrizione" rows="6" placeholder="Descrivi brevemente la prestazione offerta."></textarea>
-            </div>
-            <div class="form-group col-m">
-                <label for="luogo">Luogo</label>
-                <select id="luogo" class="form-control">
-                    <option selected>Scegli...</option>
-                    <option>...</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="orariDisponibili">Orari Disponibili</label>
-                <input type="text" class="form-control" id="orariDisponibili" placeholder="Es. Lunedì 9:00 - 12:00, Mercoledì 15:00 - 18:00">
-            </div>
-    
-            <button type="submit" class="btn btn-primary mt-3">Aggiungi Prestazione</button>
-        </form>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Salva</button>
+        </div>
+      </div>
     </div>
+  </div>
     
-    
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
