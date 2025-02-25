@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
 });
 
-
 document.addEventListener("DOMContentLoaded", updateUserUI);
 
 function updateUserUI() {
@@ -40,21 +39,67 @@ function updateUserUI() {
   const token = localStorage.getItem("authToken");
 
   if (token) {
-    // Se l'utente è autenticato, mostra il dropdown
+
+const userRole = localStorage.getItem("userRole"); // "Paziente", "Medico" o "Admin"
+
+// In base al ruolo, crea il menu appropriato
+if (userRole === "Admin") {
+
+// Se l'utente è autenticato, mostra il dropdown
     const userDropdown = document.createElement("li");
     userDropdown.id = "user-dropdown";
     userDropdown.className = "nav-item dropdown";
     userDropdown.innerHTML = `
     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
     <ul class="dropdown-menu dropdown-menu-end mt-3">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Dashboard Admin</a></li>
+        <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+        <li><a class="dropdown-item" href="/logout.html" id="logout-button">Esci</a></li>
+    </ul>
+`;
+
+    // Aggiunge il dropdown alla fine della lista UL
+    navList.appendChild(userDropdown);
+
+} else if (userRole === "Medico") {
+
+const userDropdown = document.createElement("li");
+    userDropdown.id = "user-dropdown";
+    userDropdown.className = "nav-item dropdown";
+    userDropdown.innerHTML = `
+    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
+    <ul class="dropdown-menu dropdown-menu-end mt-3">
+        <li><a class="dropdown-item" href="../profilo-medico/profilo-medico.html">Dashboard Medico</a></li>
+    <li><a class="dropdown-item" href="/logout.html" id="logout-button">Esci</a></li>
+    </ul>
+`;
+
+    // Aggiunge il dropdown alla fine della lista UL
+    navList.appendChild(userDropdown);
+
+} else if (userRole === "Paziente") {
+
+// Se l'utente è autenticato, mostra il dropdown
+    const userDropdown = document.createElement("li");
+    userDropdown.id = "user-dropdown";
+    userDropdown.className = "nav-item dropdown";
+    userDropdown.innerHTML = `
+    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
+    <ul class="dropdown-menu dropdown-menu-end mt-3">
+        <li><a class="dropdown-item" href="../profilo-utente/profilo-utente.html">Dashboard Paziente</a></li>
         <li><a class="dropdown-item" href="#" id="logout-button">Esci</a></li>
     </ul>
 `;
 
     // Aggiunge il dropdown alla fine della lista UL
     navList.appendChild(userDropdown);
+} else {
+  // Se non c'è un ruolo definito, mostra opzioni di default o non mostra il menu profilo
+  profileDropdown.innerHTML = `
+    <li><a class="dropdown-item" href="/login.html">Login</a></li>
+    <li><a class="dropdown-item" href="/register.html">Registrati</a></li>
+  `;
+}
 
     // Event listener per il logout
     document
@@ -85,16 +130,20 @@ function updateUserUI() {
         }
       });
   } else {
-    // Se l'utente non è autenticato, mostra il bottone di login
-    const loginButton = document.createElement("li");
-    loginButton.id = "login-button";
-    loginButton.className = "nav-item";
-    loginButton.innerHTML = `
-      <a class="nav-link" onclick="window.location.href='../Login/login.html'" href="#">Login</a>
-    `;
+    // Se l'utente non è autenticato, mostra il bottone di registrazione e login
+    // Creazione del primo elemento <li> per la registrazione
+    const registerItem = document.createElement("li");
+    registerItem.className = "nav-item";
+    registerItem.innerHTML = `<a class="nav-link" onclick="window.location.href='../Register/register.html'" href="#">Registrati gratis</a>`;
 
-    // Aggiunge il bottone di login alla fine della lista UL
-    navList.appendChild(loginButton);
+    // Creazione del secondo elemento <li> per il login
+    const loginItem = document.createElement("li");
+    loginItem.className = "nav-item";
+    loginItem.innerHTML = `<a class="nav-link" onclick="window.location.href='../Login/login.html'" href="#">Login</a>`;
+
+    // Aggiunta degli elementi al menu di navigazione
+    navList.appendChild(registerItem);
+    navList.appendChild(loginItem);
 
     // Aggiungi l'event listener per il login simulato
     // document.getElementById("login-button").addEventListener("click", () => {
