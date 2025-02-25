@@ -10,12 +10,13 @@
 <body>
    
    <form>
-      <label for="nome">Nome Doc:</label>
-      <input type="text" id="nome" name="nome" required>
-      <button type="submit">Invia</button>
+      <div class="little">
+      <input type="text" id="nome" name="nome" minlength="15" maxlength="15" value="Nome Doc"  onclick="value=null" required>
+    </div>
+      <button>Invia</button>
       
     </form>
-
+    
 
 <div id="contenitore">
  <div class="card">
