@@ -1,6 +1,6 @@
 
 function login(email, password) {
-    fetch('http://localhost:8080/api/login', { 
+    fetch('http://localhost:8080/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json' //il corpo della richiesta sarà in formato JSON
@@ -17,7 +17,7 @@ function login(email, password) {
     .then(data => {
         console.log('Login effettuato:', data);
         window.alert("Login effettuato.");
-        location.replace("inserire home")
+        location.replace("../homepage/homepage.html");
 
         if(data.token) {
           localStorage.setItem("authToken", data.token);
