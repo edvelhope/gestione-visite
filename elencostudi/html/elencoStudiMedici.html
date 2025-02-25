@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 
   <!-- Collegamento con il CSS -->
-  <link rel="stylesheet" href="../CSS/elencoDottori.css">
+  <link rel="stylesheet" href="../CSS/elencoStudiMedici.css">
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -30,7 +30,28 @@
   </div>
 
   <!-- Collegamento a JS -->
-  <script src="../JS/elencoDottori.js"></script>
+  <script src="../JS/elencoStudiMedici.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</br>
+  <div id="footer-container"></div>
+
+    <script>
+        // Funzione per caricare il footer
+        async function loadFooter() {
+            try {
+                const response = await fetch("footer.html");
+                if (!response.ok) throw new Error("Errore nel caricamento del footer");
+                const footerContent = await response.text();
+                document.getElementById("footer-container").innerHTML = footerContent;
+            } catch (error) {
+                console.error("Errore:", error);
+            }
+        }
+
+        // Chiama la funzione per caricare il footer
+        loadFooter();
+    </script>
+
 </body>
 </html>
