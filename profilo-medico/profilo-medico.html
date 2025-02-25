@@ -6,105 +6,223 @@
     <link rel="stylesheet" href="profilo-medico.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>Profilo Medico</title>
     
 </head>
 <body>
+
+
+
+    
 	<div class="container">
 		<div class="main-body">
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="card">
-						<div class="card-body">
-							<div class="d-flex flex-column align-items-center text-center">
-								<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
-								<div class="mt-3">
-									<h4>Mario Rossi</h4>
-									<p class="text-secondary mb-1">Specializzazione</p>
-									<p class="text-muted font-size-sm">Roma (RM)</p>
-								</div>
-							</div>
-							<div class="bio">
-								<p class="text-secondary mb-1">
-								Dermatologo con oltre 15 anni di esperienza nella diagnosi e trattamento di disturbi della pelle, dei capelli e delle unghie. Laureato all'Università di Milano e specializzato presso l'Ospedale San Giovanni di Roma, si dedica a fornire cure personalizzate, utilizzando le più moderne tecniche per migliorare la salute e l'estetica della pelle.</p>
-							</div>
-
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-8">
-					<div class="tab-content">
-                        <div class="tab-pane active" id="profile">
-                            <div class="col-lg">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Nome</h6>
-                                            </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input type="text" class="form-control" value="">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Cognome</h6>
-                                            </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input type="text" class="form-control" value="">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Email</h6>
-                                            </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input type="text" class="form-control" value="">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Telefono</h6>
-                                            </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input type="text" class="form-control" value="">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Specializzazione</h6>
-                                            </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <input type="text" class="form-control" value="">
-                                            </div>
-                                        </div>
-                                         <div class="row mb-3">
-                                            <div class="col-sm-3">
-                                              <h6 class="mb-0">Password</h6>
-                                            </div>
-                                            <div class="col-sm-9 text-secondary">
-                                              <div class="input-container">
-                                                <input type="password" class="form-control" id="passwordField" value="password123" disabled>
-                                                <i class="fa-regular fa-eye" id="eyeIcon"></i> <!-- Occhio aperto -->
-                                                <i class="fa-regular fa-eye-slash" id="eyeSlashIcon"></i> <!-- Occhio chiuso -->
-                                                <i class="fa-solid fa-pen"></i> <!-- Matita -->
-                                              </div>
-                                            </div>
-                                          </div>
-                                          
-                                        <div class="row">
-                                            <div class="col text-end">
-                                                <input type="button" class="btn btn-primary px-2" value="Save Changes">
+			<div class="row">                
+		        <div class="container-profilo">
+                    <div class="row">
+                        <!-- profilo -->
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-profilo-utente p-3 text-center">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+                                    <div class="mt-3">
+                                        <h4 id="nomeCompleto">Mario Rossi</h4>
+                                        <p class="text-secondary mb-1">Specializzazione</p>
+                                        <p class="text-muted font-size-sm">Roma (RM)</p>
+                                    </div>
+                                </div>
+                                <!--dati-->
+                                <div class="card-body">
+                                    <div class="bio">
+                                        <p class="text-secondary mb-1">
+                                        Dermatologo con oltre 15 anni di esperienza nella diagnosi e trattamento di disturbi della pelle, dei capelli e delle unghie. Laureato all'Università di Milano e specializzato presso l'Ospedale San Giovanni di Roma, si dedica a fornire cure personalizzate, utilizzando le più moderne tecniche per migliorare la salute e l'estetica della pelle.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--fine dati-->
+                    
+                    <!-- profilo - prenotazioni -->
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-contenitore">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li class="nav-item">
+                                        <a href="#profile" class="nav-link active" data-toggle="pill">Profilo</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#bookings" class="nav-link" data-toggle="pill">Prestazioni</a>
+                                    </li>
+                                </ul>
+                                <!--profilo-->
+                                <div class="tab-content p-4">
+                                    <div class="tab-pane active" id="profile">
+                                        <div class="col-lg">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Nome</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-secondary">
+                                                            <input type="text" class="form-control" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Cognome</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-secondary">
+                                                            <input type="text" class="form-control" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Email</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-secondary">
+                                                            <input type="text" class="form-control" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Telefono</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-secondary">
+                                                            <input type="text" class="form-control" value="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Specializzazione</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-secondary">
+                                                            <input type="text" class="form-control" value="">
+                                                        </div>
+                                                    </div>
+                                                     <div class="row mb-3">
+                                                        <div class="col-sm-3">
+                                                          <h6 class="mb-0">Password</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-secondary">
+                                                          <div class="input-container">
+                                                            <input type="password" class="form-control" id="passwordField" value="password123" disabled>
+                                                            <i class="fa-regular fa-eye" id="eyeIcon"></i> <!-- Occhio aperto -->
+                                                            <i class="fa-regular fa-eye-slash" id="eyeSlashIcon"></i> <!-- Occhio chiuso -->
+                                                            <i class="fa-solid fa-pen"></i> <!-- Matita -->
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      
+                                                    <div class="row">
+                                                        <div class="col-text"></div>
+                                                        <div class="col-sm-9 text-secondary">
+                                                            <input type="button" class="btn btn-primary px-2" id="saveChanges" value="Save Changes">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                </div>
+                            <!--prenotazioni-->
+                                    <div class="tab-pane" id="bookings">
+                                           <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Clicca qui per aggiungere una nuova prestazione
+   </button>
+     <!-- Modal -->
+   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLongTitle">Nuova prestazione</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+             <div class="creazionePrestazione">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="prestazione">Specializzazione</label>
+                            <select id="tipoPrestazione" class="form-control">
+                                <option selected>Scegli...</option>
+                                <option>...</option>
+                            </select>
                         </div>
-					</div>
-				</div>
-<!--card prenotazioni-->
+                        <div class="form-group col-md-6">
+                            <label for="costo">Costo (€)</label>
+                            <input type="text" class="form-control" id="costo" placeholder="Inserisci il costo della prestazione">
+                        </div>
+                    </div>
+                
+                    <!-- Sezione scelta giorni e orari -->
+                    <div class="form-group">
+                        <label>Orari Disponibili</label>
+                        <div id="giorniOrari">
+                            <div class="giorno">
+                                <input type="checkbox" name="giorni" value="Lunedì"> Lunedì
+                                <input type="time" name="startTime" class="orario-inizio">
+                                <input type="time" name="endTime" class="orario-fine">
+                            </div>
+                            <div class="giorno">
+                                <input type="checkbox" name="giorni" value="Martedì">Martedì
+                                <input type="time" name="startTime" class="orario-inizio">
+                                <input type="time" name="endTime" class="orario-fine">
+                            </div>
+                            <div class="giorno">
+                                <input type="checkbox" name="giorni" value="Mercoledì">Mercoledì
+                                <input type="time" name="startTime" class="orario-inizio">
+                                <input type="time" name="endTime" class="orario-fine">
+                            </div>
+                            <div class="giorno">
+                                <input type="checkbox" name="giorni" value="Giovedì">Giovedì
+                                <input type="time" name="startTime" class="orario-inizio">
+                                <input type="time" name="endTime" class="orario-fine">
+                            </div>
+                            <div class="giorno">
+                                <input type="checkbox" name="giorni" value="Venerdì">Venerdì
+                                <input type="time" name="startTime" class="orario-inizio">
+                                <input type="time" name="endTime" class="orario-fine">
+                            </div>
+                            <div class="giorno">
+                                <input type="checkbox" name="giorni" value="Sabato">Sabato
+                                <input type="time" name="startTime" class="orario-inizio">
+                                <input type="time" name="endTime" class="orario-fine">
+                            </div>
+                            <div class="giorno">
+                                <input type="checkbox" name="giorni" value="Domenica">Domenica
+                                <input type="time" name="startTime" class="orario-inizio">
+                                <input type="time" name="endTime" class="orario-fine">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary mt-2" onclick="aggiungiOrari()">Aggiungi orari</button>
+                    </div>
+                
+                    <!-- Riepilogo orari disponibili -->
+                    <div class="form-group mt-3">
+                        <label>Riepilogo Orari Disponibili</label>
+                        <textarea id="orariDisponibili" class="form-control" rows="3" readonly></textarea>
+                    </div>
+                </form>
+             </div>
+             
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-primary">Salva</button>
+         </div>
+       </div>
+     </div>
+   </div>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+        <!--card prenotazioni-->
 				<h2 class="titoloPrenotazioni">Prenotazioni attive</h2>
 				<div class="card" style="width: 18rem;">
 					<div class="card-body">
@@ -119,5 +237,19 @@
 	</div>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- servono per far funzionare profilo-prenotazioni -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+<!-- modal aggiungi prestazione-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
 </body>
 </html>
+
+
+
+
+

@@ -37,3 +37,83 @@
     text-align: center !important;
     margin: 50px 0 50px 0 !important;
 }
+
+
+
+/* Stile generale */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 20px;
+}
+
+/* Contenitore del form */
+form {
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Titoli e etichette */
+label {
+    margin-bottom: px;
+
+}
+
+/* Input e select */
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Stile per la sezione giorni e orari */
+#giorniOrari {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.giorno {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f1f1f1;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.giorno input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 5px;
+}
+
+/* Pulsante */
+.btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+    display: block;
+    width: 100%;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Testo area per riepilogo */
+#orariDisponibili {
+    background: #e9ecef;
+    border: none;
+    resize: none;
+    font-size: 14px;
+}
