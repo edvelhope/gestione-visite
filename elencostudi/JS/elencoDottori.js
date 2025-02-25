@@ -1,29 +1,77 @@
-// Funzione di filtro per gli studi medici
+document.addEventListener("DOMContentLoaded", function () {
+  fetchMedicalOffices();
+});
 
-//con let input mi recupero quello che è stato scritto all'interno della barra di filtraggio
+function fetchMedicalOffices() {
+  fetch("http://localhost:8080/api/medical-offices") // Cambia URL se necessario
+      .then(response => {
+          if (!response.ok) {
+              throw new Error("Errore nel recupero degli studi medici");
+          }
+          return response.json();
+      })
+      .then(data => {
+          displayMedicalOffices(data);
+      })
+      .catch(error => console.error("Errore:", error));
+}
 
-//con let filter= trasformo il carattere in minuscolo in modo da favorire il filtro 
+function displayMedicalOffices(offices) {
+  let container = document.getElementById("studiosList");
+  container.innerHTML = ""; // Puliamo la lista prima di riempirla
 
-//con let cards  seleziono tutte le card che sono contenuto in un div con classi.study-card
-function filterStudies() {
-    let input = document.getElementById("filterInput");
-    let filter = input.value.toLowerCase();
-    let cards = document.querySelectorAll(".study-card");
-  //mi faccio un foreach sulle tutte le card 
-    cards.forEach(function(card) {
-      //con let studioName= mi recupero il nome dello studio attraverso l attributo data-name lo trasfotmo in lettere minuscole
-      let studioName = card.getAttribute("data-name").toLowerCase();
-      if (studioName.includes(filter)) { //controllo studioname include quello che è stato nel filtro 
-        card.style.display = "block";  //se è si mi blocco solo su quella card e faccio scomparire le altre 
-      } else {//altrimenti no
-        card.style.display = "none";
+  offices.forEach(office => {
+      let imageSrc = null; // Immagine predefinita
+      console.log("% " + office.nome);
+
+      if (office.nome === "Salute e Benessere ") {
+          imageSrc = "../img/Salute e benessere.png";
+      } else if (office.nome === "Life Care") {
+          imageSrc = "../img/LifeCare.png";
+      } else if (office.nome === "Studio Medico del Sorriso") {
+          imageSrc = "../img/StudioMedico.jpeg";
       }
-    });
-  }
-  
-  // Funzione per andare alla pagina dottori con filtro selezionato
- // function goToDoctorsPage(studioName) {
-   // let url = `/dottori?studio=${encodeURIComponent(studioName)}`;
-   // window.location.href = url;  // Redireziona alla pagina dei dottori
-  //}
-  
+
+      // Dividiamo le specializzazioni in base alla virgola o altro separatore
+      let specializzazioni = office.specializzazione 
+          ? office.specializzazione.split(" e ").map(s => s.trim()) 
+          : ["Generale"];
+
+      let specializzazioniHtml = specializzazioni.map((spec, index) => 
+          `<li class="list-group-item"> ${index + 1}:${spec}</li>`).join("");
+
+      let card = `
+          <div class="col study-card" data-name="${office.nome}">
+              <div class="card h-100">
+                  <img src="${imageSrc}" class="card-img-top" alt="${office.nome}">
+                  <div class="card-body">
+                      <h5 class="card-title">${office.nome}</h5>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                      ${specializzazioniHtml}
+                      <li class="list-group-item">
+                          <button class="btn btn-primary" onclick="goToDoctorsPage('${office.nome}')">Vedi Dottori</button>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      `;
+      container.innerHTML += card;
+  });
+}
+
+
+
+// Funzione per filtrare le card (rimane invariata)
+function filterStudies() {
+  let input = document.getElementById("filterInput");
+  let filter = input.value.toLowerCase();
+  let cards = document.querySelectorAll(".study-card");
+
+  cards.forEach(function(card) {
+      let studioName = card.getAttribute("data-name").toLowerCase();
+      card.style.display = studioName.includes(filter) ? "block" : "none";
+  });
+
+}
+

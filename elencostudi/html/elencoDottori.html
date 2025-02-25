@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elenco Studi Medici</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
 
-  <!-- Collegamento con  il CSS -->
+  <!-- Collegamento con il CSS -->
   <link rel="stylesheet" href="../CSS/elencoDottori.css">
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,71 +18,19 @@
   <div class="container mt-4">
     <h1 class="mb-4 text-center">Elenco Studi Medici</h1>
 
-    <!-- Filtro in base al nome dello  studio -->
+    <!-- Filtro in base al nome dello studio -->
     <div class="mb-4">
       <input type="text" id="filterInput" class="form-control" placeholder="Cerca studio medico..." onkeyup="filterStudies()">
     </div>
 
-    <!-- 3 (cards) -->
+    <!-- Lista degli studi medici -->
     <div class="row row-cols-1 row-cols-md-3 g-4" id="studiosList">
-      <!-- Studio medico 1 -->
-      <div class="col study-card" data-name="Studio Medico Salute e benessere">
-        <div class="card h-100">
-          <img src="../img/Salute e benessere.png" class="card-img-top" alt="Studio Medico Salute e benessere">
-          <div class="card-body">
-            <h5 class="card-title">Studio Medico Salute e benessere</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Medicina Generale</li>
-            <li class="list-group-item">Cardiologia</li>
-            <li class="list-group-item">
-              <!-- al click del bottono si va sulla pagina mostra dottori gia filtrati per lo studio medico  -->
-              <button class="btn btn-primary" onclick="goToDoctorsPage('Studio Medico Salute e benessere')">Vedi Dottori</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Studio medico 2 -->
-      <div class="col study-card" data-name="Studio Medico Life Care">
-        <div class="card h-100">
-          <img src="../img/LifeCare.png" class="card-img-top" alt="Studio Medico Life Care">
-          <div class="card-body">
-            <h5 class="card-title">Studio Medico Life Care</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Dermatologia</li>
-            <li class="list-group-item">Chirurgia</li>
-            <li class="list-group-item">
-              <button class="btn btn-primary" onclick="goToDoctorsPage('Studio Medico Life Care')">Vedi Dottori</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Studio medico 3 -->
-      <div class="col study-card" data-name="Studio Medico del Sorriso">
-        <div class="card h-100">
-          <img src="../img/StudioMedico.jpeg" class="card-img-top" alt="Studio Medico del Sorriso">
-          <div class="card-body">
-            <h5 class="card-title">Studio Medico del Sorriso</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Ortodonzia</li>
-            <li class="list-group-item">Endodonzia</li>
-            <li class="list-group-item">
-              <button class="btn btn-primary" onclick="goToDoctorsPage('Studio Medico del Sorriso')">Vedi Dottori</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-
+      <!-- I dati verranno caricati dinamicamente con JavaScript -->
     </div>
   </div>
 
-  <!-- Collegamento a  JS -->
+  <!-- Collegamento a JS -->
   <script src="../JS/elencoDottori.js"></script>
-  <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
