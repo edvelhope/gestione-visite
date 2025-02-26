@@ -1,0 +1,102 @@
+/* Impostazioni generali */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Wrapper principale */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Contenuto principale */
+#main {
+    flex: 1;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer */
+#bottom {
+    background-color: #727273;
+    color: white;
+    padding: 5px 20px;
+    width: 100%;
+    min-height: 50vh;
+    margin: 0;
+}
+
+#bottom .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Margine superiore extra nel footer */
+#bottom .row {
+    margin-top: 20px; /* Modifica per maggiore spazio sopra */
+    padding: 0;
+}
+
+/* Stile per le liste nel footer */
+#bottom ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#bottom ul li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+#bottom ul li a:hover {
+    text-decoration: underline;
+    color: #f0f0f0;
+}
+
+/* Sezione social */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px !important; /* Aumentato lo spazio sotto */
+}
+
+/* Stile contatti */
+.info-contatti {
+    margin-top: 0px;
+}
+
+.icone {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px !important;
+}
+
+.icone i {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.icone span {
+    font-size: 18px;
+}
+
+/* Testo impresa */
+#bottom .col p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
