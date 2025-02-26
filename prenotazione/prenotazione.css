@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+.titoloPrenotazione {
+    margin: 50px 0px 20px 10px;
+}
+body {
+    color: #727273 !important;
+    background-color: #CEEFF2;
+}
+.btn-container {
+    text-align: right;
+    padding-right: 40px; 
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #2abfbf !important; 
+      border-color: #2abfbf !important; 
+      color: #fff !important; 
+      border-radius: 20px !important;
+}
+    
+.btn-primary:hover {
+        background-color: #269c9c !important; 
+        border-color: #269c9c !important;
+        border-radius: 20px !important;
+}
