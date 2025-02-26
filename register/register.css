@@ -1,0 +1,26 @@
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+
+    body{
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .bottone{
+        outline: none !important;
+        box-shadow: none !important;
+        background-color: #2ABFBF !important;
+        color: white;
+        transition: transform 0.3s ease;
+    }
+    
+    .bottone:hover {
+        transform: scale(1.2); 
+    }
+    
