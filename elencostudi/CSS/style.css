@@ -1,144 +1,102 @@
-/* Reset dei margini e padding predefiniti del browser */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Impostazioni generali per html e body: 
-   - Altezza al 100%
-   - Rimuove margini
-   - Imposta il layout in colonna con Flexbox */
+/* Impostazioni generali */
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
-body {
-    flex-grow: 1; /* Il body si espande per occupare lo spazio disponibile */
-    font-family: Arial, sans-serif; /* tipo di scrittura*/
-    background-color: #f4f4f4;
-    padding-top: 30px; /* Aggiunge spazio sopra il body */
-}
-
-/* Stili per il footer: 
-   - Sfondo grigio
-   - Testo bianco delle scritte 
-   - Aggiunge padding e lo spinge in fondo alla pagina */
-footer {
-    background-color: #727273;
-    color: #fff;
-    padding: 40px 0 20px 0;
-    margin-top: auto;
-}
-
-/* Suddivido tutto il footer in 3 colonne  */
-.footer-contenitore {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    width: 100%; /*larghezza*/
-    max-width: 1200px;  
-    margin: 0 auto;
-}
-
-/* Stili per ogni colonna del footer: 
-   - Disposizione verticale
-   - Larghezza del 30% per ogni colonna */
-.footer-colonne {
+/* Wrapper principale */
+.wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: 30%;
+    flex: 1;
 }
 
-/* Lista dei link nelle colonne: 
-    */
-.footer-colonne ul {
-    list-style: none;
+/* Contenuto principale */
+#main {
+    flex: 1;
+    background-color: white;
+    margin: 0;
     padding: 0;
 }
 
-/* Stili per gli elementi della lista nel footer */
-.footer-colonne li {
-    margin-bottom: 10px; /* Spazio tra i link */
+/* Footer */
+#bottom {
+    background-color: #727273;
+    color: white;
+    padding: 5px 20px;
+    width: 100%;
+    min-height: 50vh;
+    margin: 0;
 }
 
-/* colora  i link del footer */
-.footer-colonne a {
-    color: #fff; 
+#bottom .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Margine superiore extra nel footer */
+#bottom .row {
+    margin-top: 20px; /* Modifica per maggiore spazio sopra */
+    padding: 0;
+}
+
+/* Stile per le liste nel footer */
+#bottom ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#bottom ul li a {
+    font-size: 20px;
     text-decoration: none;
-    font-size: 14px;
+    color: white;
 }
 
-.footer-colonne a:hover {
-    text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+#bottom ul li a:hover {
+    text-decoration: underline;
+    color: #f0f0f0;
 }
 
-/* Informazioni della societa  nel footer */
-footer p.informazioni {
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 40px; /* Spazio sopra il testo aziendale */
-}
-
-/*  Stili per i bottoni social:
-   - Icone circolari
-   - Testo centrato
-   - Dimensione 30px */
-footer .btn {
-    font-size: 16px; /* grandezza del loco dei bottoni */
-    display: inline-block;/* mette i bottoni tutti sulla stessa linea */
-    width: 30px; 
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    border-radius: 50%;
-    color: #fff;
-}
-
-footer .btn:hover {
-    opacity: 0.8; /*diventa opaco  al passaggio del mouse */
-}
-
-/* Sezione per centrare i bottoni social */
+/* Sezione social */
 .social {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Distanza tra i bottoni */
-    margin-top: 20px; /* Spazio sopra i bottoni */
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px !important; /* Aumentato lo spazio sotto */
 }
 
-/* Ingrandisce il testo  */
-footer .footer-colonne .ingrandisci-testo {
-    font-size: 20px !important;
-    font-weight: normal;
-}
-
-/* margine superiore per le icon di contatt */
+/* Stile contatti */
 .info-contatti {
     margin-top: 0px;
 }
 
-/* Layout per le icone di contatto: 
-   - Disposizione orizzontale
-   - Colore bianco */
 .icone {
     display: flex;
     align-items: center;
     font-size: 18px;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
 }
 
 .icone i {
-    font-size: 25px; /* Dimensione dell'icona */
-    margin-right: 10px; /* Spazio tra l'icona e il testo */
+    font-size: 25px;
+    margin-right: 10px;
 }
 
 .icone span {
     font-size: 18px;
+}
+
+/* Testo impresa */
+#bottom .col p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
