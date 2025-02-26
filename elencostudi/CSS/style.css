@@ -29,7 +29,7 @@ html, body {
     color: white;
     padding: 5px 20px;
     width: 100%;
-    min-height: 50vh;
+    
     margin: 0;
 }
 
@@ -99,4 +99,10 @@ html, body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* Isolamento del footer */
+.footer-container {
+    width: 100%;
+    display: block;
 }

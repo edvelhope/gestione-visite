@@ -44,14 +44,14 @@ body {
     right: 10px;
     font-size: 18px;
 }
-.btn-primary {
+.btn-primaryy {
   background-color: #2abfbf !important; 
     border-color: #2abfbf !important; 
     color: #fff !important; 
     border-radius: 20px !important;
   }
   
-  .btn-primary:hover {
+  .btn-primaryy:hover {
       background-color: #269c9c !important; 
       border-color: #269c9c !important;
       border-radius: 20px !important;

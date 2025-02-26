@@ -13,3 +13,16 @@ body{
 button:hover {
     transform: scale(1.2); 
 }
+
+.social a {
+    width: 37px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .social .btn {
+    padding: 0.5rem; 
+  }
