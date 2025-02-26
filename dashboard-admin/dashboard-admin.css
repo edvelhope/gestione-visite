@@ -54,7 +54,7 @@
 }
 
 .navigation ul li:hover a {
-    color: #727273 !important;
+    color: #727273;
 }
 
 .navigation ul li a .icon {
