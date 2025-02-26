@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Tags Input CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet">
+    <!-- Link font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Css -->
+    <link href="registerDoctor.css" rel="stylesheet">    
+</head>
+<body>
+    <section class="h-100" style="background-color: white !important;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card card-registration my-4">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="https://media-public.canva.com/pEMXM/MAGNJjpEMXM/1/s2.jpg"
+                                    alt="Sample photo" class="img-fluid"
+                                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; " />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+
+                                  <h3 class="mb-5 text-uppercase">Continua registrazione</h3>
+
+                                    <fieldset class="border p-3" style="margin-bottom: 10%;">
+                                      <legend class="w-auto px-2">Studio Medico</legend>
+
+                                      <select multiple id="select-tags" class="form-control" style="margin-top: -10%; margin-bottom: -5%;">
+                                        <option value="Amsterdam">Amsterdam</option>
+                                        <option value="Washington">Washington</option>
+                                        <option value="Sydney">Sydney</option>
+                                        <option value="Beijing">Beijing</option>
+                                        <option value="Cairo">Cairo</option>
+                                    </select>
+
+                                      <div class="mb-3" style="margin-top: 10%;">
+                                          <label for="nome" class="form-label">Codice fiscale</label>
+                                          <input type="text" class="form-control" id="nome" placeholder="Inserisci il tuo nome">
+                                      </div>
+                                      <!--
+                                      <div class="mb-3">
+                                          <label for="cognome" class="form-label">Nome</label>
+                                          <input type="text" class="form-control" id="cognome" placeholder="Inserisci il tuo cognome">
+                                      </div>
+                                      -->
+                                  </fieldset>
+                                    
+                                    <button type="button" class="btn bottone" style="background-color: #727273 !important;" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-bottom: +30%;">
+                                      Specializzazioni
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Seleziona Specializzazioni</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                
+                                                <div class="modal-body">
+                                                    <div class="container mt-5">
+                                                        <!-- Selettore con tags -->
+                                                        <select multiple id="select-tags-modal" class="form-control" style="margin-top: -10%; margin-bottom: -5%;">
+                                                            <option value="Amsterdam">Amsterdam</option>
+                                                            <!--Qui vanno inserite le specializzazione-->
+                                                        </select>
+
+                                                        <div class="container mt-5">
+                                                            <h4>Specializzazioni selezionate</h4>
+                                                            <input type="text" value="" data-role="tagsinput" class="form-control" id="tags-input">
+                                                        </div>   
+                                                    </div>
+                                                </div>
+                                                
+
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                                                    <button type="button" class="btn bottone" id="save-tags">Salva</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="d-flex justify-content-end pt-3" style="margin-right: 5%; margin-bottom: 10%; margin-top: 34%;">
+                                      <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">Resetta
+                                        tutto</button>
+                                      <button type="click" onclick="createDoctor()" data-mdb-button-init data-mdb-ripple-init class="btn btn-lg ms-2 bottone"
+                                        style="background-color: #2ABFBF !important;">Salva</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Link Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Tags Input JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+
+    <!--
+    <script>
+    $(document).ready(function() {
+        $('input[data-role="tagsinput"]').tagsinput();
+
+        //aggiunge i tag dopo che hai cliccato il menu a tendina
+        $('#select-tags, #select-tags-modal').on('change', function() {
+            const selectedOptions = $(this).val();
+            const tagsInput = $('#tags-input');
+            selectedOptions.forEach(option => {
+                if (!tagsInput.tagsinput('items').includes(option)) {
+                    tagsInput.tagsinput('add', option);
+                }
+            });
+        });
+
+        $('input[data-role="tagsinput"]').on('itemAdded', function(event) {
+            let $tag = $('input[data-role="tagsinput"]').siblings('.bootstrap-tagsinput').children('.badge');
+            $tag.append('<span data-role="remove" style="margin-left: 10px; cursor: pointer;">&times;</span>');
+        });
+
+        $(document).on('click', '[data-role="remove"]', function(event) {
+            let $tag = $(this).closest('.badge');
+            let tagText = $tag.contents().get(0).nodeValue.trim();
+            $('input[data-role="tagsinput"]').tagsinput('remove', tagText);
+        });
+
+            // Aggiunta della funzione di salvataggio dei tag
+            $('#save-tags').on('click', function() {
+                const tagsInput = $('#tags-input').tagsinput('items');
+                console.log('Tags salvati:', tagsInput); 
+                alert('Tags salvati con successo!');  
+            });
+    });
+    </script>-->
+    <script src="registerDoctor.js"></script>
+</body>
+</html>
