@@ -4,103 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elenco Prestazioni</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../CSS/elencoPrestazioni.css">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  
 </head>
 <body>
   <div class="container mt-4">
     <h1 class="mb-4 text-center">Elenco Prestazioni</h1>
     
     <div class="row row-cols-1 row-cols-md-2 g-4" id="prestazioniList">
-      <!-- Prestazione 1 - Medicina Generale -->
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Studio Medico Life Care - Medicina Generale</h5>
-            <p class="card-text">Le visite mediche generali sono fondamentali per monitorare la tua salute e prevenire le malattie più comuni. Durante la visita, il medico eseguirà un'analisi approfondita dei tuoi parametri vitali, come la pressione sanguigna, e valuterà eventuali segnali di patologie più gravi. Sarà possibile diagnosticare patologie comuni come diabete, ipertensione e malattie respiratorie, adottando un approccio preventivo per migliorare la qualità della vita e il benessere generale del paziente.</p>
-            <p><strong>Medico:</strong> Dr. Marco Rossi, Specialista in Medicina Generale.</p>
-            <p><strong>Disponibilità:</strong> Lunedì - Mercoledì, 9:00 - 12:00</p>
-            <button class="btn btn-primary" onclick="accettaPrestazione('Medicina Generale')">Accetta Prestazione</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Prestazione 2 - Cardiologia -->
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Studio Medico Life Care - Cardiologia</h5>
-            <p class="card-text">Le visite cardiologiche sono essenziali per il monitoraggio della salute del cuore. L’esame include la valutazione della funzione cardiaca attraverso ECG e altri test diagnostici. Sarà anche possibile monitorare la pressione arteriosa e i parametri cardiaci, identificando precocemente eventuali segni di malattie cardiache come l’infarto o le aritmie. Inoltre, il medico fornirà consigli per uno stile di vita sano e la gestione del rischio cardiovascolare.</p>
-            <p><strong>Medico:</strong> Dr. Marco Rossi, Specialista in Cardiologia.</p>
-            <p><strong>Disponibilità:</strong> Giovedì - Venerdì, 9:00 - 12:00</p>
-            <button class="btn btn-primary" onclick="accettaPrestazione('Cardiologia')">Accetta Prestazione</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Prestazione 3 - Dermatologia -->
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Studio Medico Salute e Benessere - Dermatologia</h5>
-            <p class="card-text">La dermatologia si occupa della diagnosi e del trattamento di una vasta gamma di patologie della pelle, dalle allergie cutanee alle malattie più complesse come psoriasi ed eczema. Durante la visita dermatologica, il medico eseguirà un esame approfondito della pelle per identificare eventuali segni di patologie e proporre un piano di trattamento personalizzato, che può includere l'uso di farmaci o trattamenti estetici come il laser per la cura di cicatrici e macchie cutanee.</p>
-            <p><strong>Medico:</strong> Dr.ssa Laura Bianchi, Dermatologa esperta in trattamenti laser.</p>
-            <p><strong>Disponibilità:</strong> Martedì - Giovedì, 14:00 - 17:00</p>
-            <button class="btn btn-primary" onclick="accettaPrestazione('Dermatologia')">Accetta Prestazione</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Prestazione 4 - Chirurgia -->
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Studio Medico Salute e Benessere - Chirurgia</h5>
-            <p class="card-text">La chirurgia dermatologica è specializzata nell’esecuzione di interventi minori, come la rimozione di lesioni cutanee, nei, o altre anomalie. Questi interventi sono solitamente rapidi e poco invasivi, ma vengono eseguiti con la massima attenzione per garantire la sicurezza del paziente. Inoltre, il medico potrà anche offrire trattamenti estetici per migliorare l’aspetto della pelle, come la correzione di cicatrici o la rimozione di tatuaggi indesiderati.</p>
-            <p><strong>Medico:</strong> Dr.ssa Laura Bianchi, Specialista in Chirurgia Dermatologica.</p>
-            <p><strong>Disponibilità:</strong> Mercoledì - Venerdì, 14:00 - 17:00</p>
-            <button class="btn btn-primary" onclick="accettaPrestazione('Chirurgia')">Accetta Prestazione</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Prestazione 5 - Ortodonzia -->
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Studio Medico del Sorriso - Ortodonzia</h5>
-            <p class="card-text">L'ortodonzia è la specialità che si occupa della correzione dei difetti di allineamento dei denti e delle ossa mascellari. Durante la visita, l’ortodontista valuterà il corretto allineamento dei denti e pianificherà un trattamento personalizzato. I trattamenti ortodontici possono includere l'uso di apparecchi fissi o mobili per migliorare il sorriso e la funzione masticatoria. La salute orale complessiva è fondamentale per il benessere a lungo termine.</p>
-            <p><strong>Medico:</strong> Dr. Giuseppe Verdi, Specialista in Ortodonzia.</p>
-            <p><strong>Disponibilità:</strong> Lunedì - Mercoledì, 10:00 - 13:00</p>
-            <button class="btn btn-primary" onclick="accettaPrestazione('Ortodonzia')">Accetta Prestazione</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Prestazione 6 - Endodonzia -->
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Studio Medico del Sorriso - Endodonzia</h5>
-            <p class="card-text"></br>
-                L'endodonzia si occupa della cura dei canali radicolari e della polpa dentale. I trattamenti endodontici, come il trattamento canalare (devitalizzazione), sono essenziali per salvare i denti gravemente danneggiati o infetti. Durante la visita, il medico eseguirà una valutazione accurata dello stato di salute dei denti e proporrà il trattamento più adatto per prevenire infezioni e mantenere la funzione del dente a lungo termine.
-            
-            </p>
-            <p><strong>Medico:</strong> Dr. Giuseppe Verdi, Specialista in Endodonzia.</p>
-            <p><strong>Disponibilità:</strong> Giovedì - Venerdì, 10:00 - 13:00</p>
-            <button class="btn btn-primary" onclick="accettaPrestazione('Endodonzia')">Accetta Prestazione</button>
-          </div>
-        </div>
-      </div>
+      <!-- Le card delle prestazioni verranno inserite dinamicamente qui -->
     </div>
   </div>
 
+  <!-- Bootstrap JS -->
   <script src="../JS/elencoPrestazioni.js"></script>
 
   <!-- Bootstrap JS -->
