@@ -54,7 +54,7 @@ if (userRole === "Admin") {
     <ul class="dropdown-menu dropdown-menu-end mt-3">
         <li><a class="dropdown-item" href="#">Dashboard Admin</a></li>
         <li><a class="dropdown-item" href="#">Impostazioni</a></li>
-        <li><a class="dropdown-item" href="/logout.html" id="logout-button">Esci</a></li>
+        <li><a class="dropdown-item" href="" id="logout-button">Esci</a></li>
     </ul>
 `;
 
@@ -70,7 +70,7 @@ const userDropdown = document.createElement("li");
     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
     <ul class="dropdown-menu dropdown-menu-end mt-3">
         <li><a class="dropdown-item" href="../profilo-medico/profilo-medico.html">Dashboard Medico</a></li>
-    <li><a class="dropdown-item" href="/logout.html" id="logout-button">Esci</a></li>
+    <li><a class="dropdown-item" href="" id="logout-button">Esci</a></li>
     </ul>
 `;
 
@@ -87,7 +87,7 @@ const userDropdown = document.createElement("li");
     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
     <ul class="dropdown-menu dropdown-menu-end mt-3">
         <li><a class="dropdown-item" href="../profilo-utente/profilo-utente.html">Dashboard Paziente</a></li>
-        <li><a class="dropdown-item" href="#" id="logout-button">Esci</a></li>
+        <li><a class="dropdown-item" href="" id="logout-button">Esci</a></li>
     </ul>
 `;
 
