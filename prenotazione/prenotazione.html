@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- nav-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+    />
+    <link href="../navbar/navbar.css" rel="stylesheet" />
+    
+
+    <!-- Link font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="prenotazione.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav
+      class="navbar navbar-expand-lg"
+      aria-label="Eleventh navbar example"
+      id="navbar-container"
+    ></nav>
+
+
+    <section class="vh-100">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-9">
+      
+              <h4 class="titoloPrenotazione">Conferma prenotazione</h4>
+      
+              <div class="card" style="border-radius: 15px;">
+                <div class="card-body">
+      
+                <!-- nome -->
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Nome</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input type="text" class="form-control form-control-lg" placeholder="Inserisci il nome" required />
+                    </div>
+                  </div>
+      
+                  <hr class="mx-n3">
+      
+                  <!-- cognome -->
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Cognome</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input type="text" class="form-control form-control-lg" placeholder="Inserisci il cognome" required />
+                    </div>
+                  </div>
+      
+                  <hr class="mx-n3">
+                  <!-- data nascita -->
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Data di nascita</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input type="date" class="form-control form-control-lg" required />
+                    </div>
+                  </div>
+      
+                  <hr class="mx-n3">
+      
+                  <!-- cf -->
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+                      <h6 class="mb-0">Codice Fiscale</h6>
+                    </div>
+                    <div class="col-md-9 pe-5">
+                      <input type="text" class="form-control form-control-lg" placeholder="Inserisci il codice fiscale" required />
+                    </div>
+                  </div>
+      
+                  <hr class="mx-n3">
+      
+      <!-- Termini e Condizioni -->
+<div class="row align-items-center">
+    <div class="col-md-9 offset-md-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="terms" required>
+            <label class="form-check-label" for="terms">
+                Accetto i <a href="termini-e-condizioni.html" target="_blank">Termini e Condizioni</a>
+            </label>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Autorizzazione-->
+<div class="row align-items-center py-3">
+    <div class="col-md-9 offset-md-3 pe-5">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="privacy" required>
+            <label class="form-check-label" for="privacy">
+                Autorizzo il trattamento dei miei dati personali secondo la <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+            </label>
+        </div>
+    </div>
+</div>
+
+                  <div class="btn-container">
+                    <button type="submit" class="btn btn-primary btn-lg">Prenota</button>
+                </div>
+      
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- per bootstrap nav-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    <script src="../navbar/navbar.js"></script>
+</body>
+</html>

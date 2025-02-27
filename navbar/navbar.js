@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("navbar-container").innerHTML = `
       <div class="container-fluid">
-        <a href="#"><img src="../navbar/logo.png" alt="logo" height="50px" width="50px"/></a>
-        <a class="navbar-brand" href="#">MediCare</a>
+        <a href="../homepage/homepage.html"><img src="../navbar/logo.png" alt="logo" height="50px" width="50px"/></a>
+        <a class="navbar-brand" href="../homepage/homepage.html">MediCare</a>
         <button
           class="navbar-toggler collapsed"
           type="button"
@@ -39,17 +39,15 @@ function updateUserUI() {
   const token = localStorage.getItem("authToken");
 
   if (token) {
+    const userRole = localStorage.getItem("userRole"); // "Paziente", "Medico" o "Admin"
 
-const userRole = localStorage.getItem("userRole"); // "Paziente", "Medico" o "Admin"
-
-// In base al ruolo, crea il menu appropriato
-if (userRole === "Admin") {
-
-// Se l'utente è autenticato, mostra il dropdown
-    const userDropdown = document.createElement("li");
-    userDropdown.id = "user-dropdown";
-    userDropdown.className = "nav-item dropdown";
-    userDropdown.innerHTML = `
+    // In base al ruolo, crea il menu appropriato
+    if (userRole === "Admin") {
+      // Se l'utente è autenticato, mostra il dropdown
+      const userDropdown = document.createElement("li");
+      userDropdown.id = "user-dropdown";
+      userDropdown.className = "nav-item dropdown";
+      userDropdown.innerHTML = `
     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
     <ul class="dropdown-menu dropdown-menu-end mt-3">
         <li><a class="dropdown-item" href="#">Dashboard Admin</a></li>
@@ -58,15 +56,13 @@ if (userRole === "Admin") {
     </ul>
 `;
 
-    // Aggiunge il dropdown alla fine della lista UL
-    navList.appendChild(userDropdown);
-
-} else if (userRole === "Medico") {
-
-const userDropdown = document.createElement("li");
-    userDropdown.id = "user-dropdown";
-    userDropdown.className = "nav-item dropdown";
-    userDropdown.innerHTML = `
+      // Aggiunge il dropdown alla fine della lista UL
+      navList.appendChild(userDropdown);
+    } else if (userRole === "Medico") {
+      const userDropdown = document.createElement("li");
+      userDropdown.id = "user-dropdown";
+      userDropdown.className = "nav-item dropdown";
+      userDropdown.innerHTML = `
     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
     <ul class="dropdown-menu dropdown-menu-end mt-3">
         <li><a class="dropdown-item" href="../profilo-medico/profilo-medico.html">Dashboard Medico</a></li>
@@ -74,16 +70,14 @@ const userDropdown = document.createElement("li");
     </ul>
 `;
 
-    // Aggiunge il dropdown alla fine della lista UL
-    navList.appendChild(userDropdown);
-
-} else if (userRole === "Paziente") {
-
-// Se l'utente è autenticato, mostra il dropdown
-    const userDropdown = document.createElement("li");
-    userDropdown.id = "user-dropdown";
-    userDropdown.className = "nav-item dropdown";
-    userDropdown.innerHTML = `
+      // Aggiunge il dropdown alla fine della lista UL
+      navList.appendChild(userDropdown);
+    } else if (userRole === "Paziente") {
+      // Se l'utente è autenticato, mostra il dropdown
+      const userDropdown = document.createElement("li");
+      userDropdown.id = "user-dropdown";
+      userDropdown.className = "nav-item dropdown";
+      userDropdown.innerHTML = `
     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
     <ul class="dropdown-menu dropdown-menu-end mt-3">
         <li><a class="dropdown-item" href="../profilo-utente/profilo-utente.html">Dashboard Paziente</a></li>
@@ -91,15 +85,15 @@ const userDropdown = document.createElement("li");
     </ul>
 `;
 
-    // Aggiunge il dropdown alla fine della lista UL
-    navList.appendChild(userDropdown);
-} else {
-  // Se non c'è un ruolo definito, mostra opzioni di default o non mostra il menu profilo
-  profileDropdown.innerHTML = `
+      // Aggiunge il dropdown alla fine della lista UL
+      navList.appendChild(userDropdown);
+    } else {
+      // Se non c'è un ruolo definito, mostra opzioni di default o non mostra il menu profilo
+      profileDropdown.innerHTML = `
     <li><a class="dropdown-item" href="/login.html">Login</a></li>
     <li><a class="dropdown-item" href="/register.html">Registrati</a></li>
   `;
-}
+    }
 
     // Event listener per il logout
     document
