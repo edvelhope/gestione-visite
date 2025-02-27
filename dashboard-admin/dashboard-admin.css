@@ -87,8 +87,9 @@
     text-align: start;
     white-space: nowrap;
 }
-/*
-.navigation ul li:hover a::before {
+/*curva fuori*/
+.navigation ul li:hover a::before, 
+.navigation ul li.hovered a::before {
     content: "";
     position:absolute;
     right: 0;
@@ -97,11 +98,12 @@
     height: 50px;
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 35px 35px 0 10px var(--white) ;
+    box-shadow: 35px 35px 0 10px white;
     pointer-events: none;
 
 }
-.navigation ul li:hover a::after {
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
     content: "";
     position:absolute;
     right: 0;
@@ -110,8 +112,21 @@
     height: 50px;
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 35px -35px 0 10px var(--white) ;
+    box-shadow: 35px -35px 0 10px white;
     pointer-events: none;
 
-} */
+} 
 
+.card {
+    margin-left: 50px;
+    
+}
+
+.card-title {
+    text-align: center; 
+}
+
+.btn {
+    display: block;
+    margin: 10px auto 0 auto; 
+}
