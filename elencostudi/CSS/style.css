@@ -101,8 +101,15 @@ html, body {
     text-overflow: ellipsis;
 }
 
+<<<<<<< HEAD
 /* Isolamento del footer */
 .footer-container {
     width: 100%;
     display: block;
 }
+=======
+.custom-btn {
+    color: rgb(226, 226, 226);
+}
+
+>>>>>>> 9f67cc8a184ed5a830366ca16fcd2102998f8ef7

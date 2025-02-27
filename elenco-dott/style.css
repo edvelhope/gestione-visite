@@ -1,0 +1,71 @@
+
+.card{
+  width: 400px;
+ justify-content: left;
+
+ border-radius: 20px;
+ overflow: hidden;
+ padding: 7px;
+ margin-bottom: 15px;
+ 
+}
+#contenitore{
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.little{
+  margin-right: 5px;
+}
+img {
+  width: 80px;
+  height: 70px;
+  border-radius: 20px;
+  justify-content: left !important;
+  margin-left: 10px;
+  margin-top: 10px;
+  ;
+}
+.card-body{
+justify-content: left;
+text-align:left;
+}
+form{
+display: flex;
+text-align: center;
+margin: 50px;
+justify-content: center;
+
+}
+.nomedoc{
+  margin-left: 20px;
+  margin-top: 20;
+}
+#dott{
+  border-radius: 20px;
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center;
+ 
+}
+
+#invio,.btn-btn-primary,button {
+  background-color: #2abfbf !important; /* Cambia il colore di sfondo */
+  border-color: #2abfbf !important; /* Cambia il colore del bordo */
+  color: #fff !important; /* Cambia il colore del testo */
+}
+#citta,.btn-btn-primary,button,#nome {
+  background-color: #269c9c !important; /* Cambia colore al passaggio del mouse */
+  border-color: #269c9c !important;
+}
+
+
+.bottone{
+ display: flex;
+ justify-content: center;
+}
+
+#specializzazione{
+  margin-top: 5px;
+}

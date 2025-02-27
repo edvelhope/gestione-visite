@@ -3,8 +3,41 @@
     padding: 0;
 }
 body {
-    font-family: "Montserrat", sans-serif;
-  }
+    font-family: "Montserrat", sans-serif !important;
+}
+/* inizio modifica img*/ 
+.user-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 5% 15% 5% 31%;
+}
+
+#photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+#file {
+    display: none !important;
+}
+
+#uploadbtn {
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    padding: 5px 6px 4px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    color:#696161;
+    transform: translateX(-90%);
+    margin-top: 100px;
+    background-color: rgb(173, 172,172, 0.801);
+    box-shadow: 2px 4px 4px rgb(0, 0,0, 0.0.644);
+
+}
+/* fine modifica img*/ 
 
 .info {
     text-align: left;
@@ -49,8 +82,13 @@ body {
     font-size: 18px;
 }
 
+<<<<<<< HEAD
 .btn-primaryy {
 background-color: #2abfbf !important; 
+=======
+.btn-primary {
+    background-color: #2abfbf !important; 
+>>>>>>> 9f67cc8a184ed5a830366ca16fcd2102998f8ef7
   border-color: #2abfbf !important; 
   color: #fff !important; 
   border-radius: 20px !important;
@@ -60,7 +98,7 @@ background-color: #2abfbf !important;
     background-color: #269c9c !important; 
     border-color: #269c9c !important;
     border-radius: 20px !important;
- }
+}
 
 
 .nav-link.active, .nav-pills .show>.nav-link {
@@ -117,3 +155,5 @@ input[type="time"] {
     font-size: 14px;
     outline: none; /* toglie bordo */
 }
+
+
