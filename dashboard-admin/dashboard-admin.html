@@ -25,19 +25,17 @@
     <!--navigazione sinistra-->
             <div class="container">
                 <div class="navigation">
-                    <ul>              
-                        <li>
+                    <ul>
+                        <li data-target="gestione-medici">
                             <a href="#">
                                 <span class="icon">
-                                <i class="fa-solid fa-stethoscope"></i>
-                            </span>
+                                    <i class="fa-solid fa-stethoscope"></i>
+                                </span>
                                 <span class="title">Gestione medici</span>
                             </a>
                         </li>
-
-
-
-                        <li>
+                
+                        <li data-target="gestione-visite">
                             <a href="#">
                                 <span class="icon">
                                     <i class="fa-solid fa-book-medical"></i>
@@ -45,8 +43,8 @@
                                 <span class="title">Gestione visite</span>
                             </a>
                         </li>
-
-                        <li>
+                
+                        <li data-target="prenotazioni">
                             <a href="#">
                                 <span class="icon">
                                     <i class="fa-solid fa-file-medical"></i>
@@ -55,66 +53,131 @@
                             </a>
                         </li>
                     </ul>
-                    
                 </div>
                 <!-- fine navigazione sinistra-->
-                 
-
-                
-        <!-- gestione medici-->
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 ">
-                    <div class="card mt-5">
-                        <div class="card-body">
-                            <h5 class="card-title">Aggiungi un nuovo medico</h5>
-                            <p class="card-text ms-3 mt-3">Registra un nuovo medico inserendo i suoi dati personali e professionali per ampliare il team.</p>
-                            <a href="#" class="btn btn-primary">Aggiungi medico</a>
+                <div id="gestione-medici" class="content"><div class="main">
+                    <div class="row row-cols-1 row-cols-md-3 g-5">
+                        <div class="col">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Aggiungi medico</h5>
+                              <p class="card-text">Registra un nuovo medico inserendo i suoi dati personali e professionali per ampliare il team.</p>
+                              <button type="button" class="btn btn-primary">Aggiungi medico</button>
+                            </div>
+                          </div>
                         </div>
+                        <div class="col">
+                          <div class="card">
+                           
+                            <div class="card-body">
+                              <h5 class="card-title">Modifica un medico</h5>
+                              <p class="card-text">Aggiorna le informazioni di un medico già esistente per mantenere i dati sempre aggiornati.</p>
+                              <button type="button" class="btn btn-primary">Modifica</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card">
+                           
+                            <div class="card-body">
+                              <h5 class="card-title">Visualizza elenco</h5>
+                              <p class="card-text">Consulta la lista dei medici registrati nel sistema e accedi ai dettagli di ciascuno.</p>
+                              <button type="button" class="btn btn-primary">Visualizza tutti</button>
+                            </div>
+                          </div>
+                        </div>
+                    
                     </div>
-                </div>
+                                
         
-                <div class="col-md-4">
-                    <div class="card mt-5">
-                        <div class="card-body">
-                            <h5 class="card-title">Modifica dati medico</h5>
-                            <p class="card-text ms-3 mt-3">Aggiorna le informazioni di un medico già presente nel sistema per mantenere i dati sempre aggiornati.</p>
-                            <a href="#" class="btn btn-primary">Modifica medico</a>
-                        </div>
-                    </div>
-                </div>
+                               
         
-                <div class="col-md-4">
-                    <div class="card mt-5">
-                        <div class="card-body">
-                            <h5 class="card-title">Elenco Medici</h5>
-                            <p class="card-text ms-3 mt-3" >Consulta la lista dei medici registrati nel sistema e visualizza i dettagli di ciascuno.</p>
-                            <a href="#" class="btn btn-primary">Visualizza medici</a>
+                    
+                    
+        
+        
+                        </div></div>
+                <div id="gestione-visite" class="content"><div class="main">
+                    <div class="row row-cols-1 row-cols-md-3 g-5">
+                        <div class="col">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Aggiungi una nuova tipologia di visita</h5>
+                              <p class="card-text">Crea una nuova tipologia di visita con dettagli come nome, durata, costo e risorse necessarie.</p>
+                              <button type="button" class="btn btn-primary">Aggiungi visita</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card">
+                           
+                            <div class="card-body">
+                              <h5 class="card-title">Modifica una tipologia di visita</h5>
+                              <p class="card-text">Modifica le informazioni di una tipologia di visita esistente (nome, durata, costo, ecc.).</p>
+                              <button type="button" class="btn btn-primary">Modifica</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card">
+                           
+                            <div class="card-body">
+                              <h5 class="card-title">Visualizza tutte le visite</h5>
+                              <p class="card-text">Visualizza un elenco completo di tutte le visite programmate, con dettagli come data, ora, paziente, medico assegnato.</p>
+                              <button type="button" class="btn btn-primary">Visualizza elenco</button>
+                            </div>
+                          </div>
+                        </div>
+                    
+                    </div>
+                                
+        
+                               
+        
+                    
+                    
+        
+        
                         </div>
                     </div>
-                </div>
+                <div id="prenotazioni" class="content"><div class="main">
+                    <div class="row row-cols-1 row-cols-md-3 g-5">
+                        <div class="col">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Visualizza prenotazioni</h5>
+                              <p class="card-text"> Accedi a un elenco dettagliato di tutte le prenotazioni, con informazioni complete su ogni prenotazione.</p>
+                              <button type="button" class="btn btn-primary">Visualizza prenotazioni</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card">
+                           
+                            <div class="card-body">
+                              <h5 class="card-title">Modifica una prenotazione</h5>
+                              <p class="card-text"> Modifica i dettagli di una prenotazione già esistente, aggiornando informazioni principali e altri dettagli rilevanti. </p>
+                              <button type="button" class="btn btn-primary">Modifica</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card">
+                           
+                            <div class="card-body">
+                              <h5 class="card-title">Visualizza prenotazioni per medico</h5>
+                              <p class="card-text"> Visualizza tutte le prenotazioni assegnate a un medico, con dettagli su data, ora e paziente.</p>
+                              <button type="button" class="btn btn-primary">Visualizza prenotazioni</button>
+                            </div>
+                          </div>
+                        </div>
+                    
+                    </div>
+                          
+                        </div></div>
+
+        
             </div>
-        </div>
-        
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <script
