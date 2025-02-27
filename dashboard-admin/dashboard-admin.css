@@ -4,20 +4,19 @@
 }
 
 .container {
-    position:relative;
+    position: relative;
     width: 100%;
 }
 
 .navigation {
-    position:fixed;
-    left:0;
+    position: fixed;
+    left: 0;
     width: 300px;
     height: 100%;
     background-color: #2ABFBF;
     border-left: 10px solid var(--blue);
     transition: 0.5s;
     overflow: hidden;
-
 }
 
 .navigation ul {
@@ -39,7 +38,6 @@
 .navigation ul li:hover {
     background-color: white;
 }
-
 
 .navigation ul li a {
     position: relative;
@@ -66,15 +64,7 @@
     text-align: center;
 }
 
-.navigation ul li a .icon {
-    position: relative;
-    display: block;
-    min-width: 60px;
-    height: 60px;
-    line-height: 75px;
-    text-align: center;
-}
-.navigation ul li a .icon i{
+.navigation ul li a .icon i {
     font-size: 1.75rem;
 }
 
@@ -87,10 +77,11 @@
     text-align: start;
     white-space: nowrap;
 }
+
 /*curva fuori*/
 .navigation ul li:hover a::before {
     content: "";
-    position:absolute;
+    position: absolute;
     right: 0;
     top: -50px;
     width: 50px;
@@ -99,14 +90,11 @@
     border-radius: 50%;
     box-shadow: 35px 35px 0 10px white;
     pointer-events: none;
-
 }
 
-.navigation ul li:hover a::after
-
- {
+.navigation ul li:hover a::after {
     content: "";
-    position:absolute;
+    position: absolute;
     right: 0;
     bottom: -50px;
     width: 50px;
@@ -115,31 +103,40 @@
     border-radius: 50%;
     box-shadow: 35px -35px 0 10px white;
     pointer-events: none;
-
 }
+
 .content {
     display: none;
-    padding: 20px;
-    border: 1px solid #ccc;
     margin-top: 10px;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: flex-start; /* Allinea gli elementi all'inizio */
+}
+
 .main {
     position: absolute;
-    width: calc(100% - 300px);
     left: 300px;
+    width: calc(100% - 300px); /* La larghezza della main si adatta accanto alla navigation */
     margin-top: 20px;
 }
 
 .card {
     text-align: center;
-    margin-top: 20px;
+    margin: 10px;
     box-shadow: 0 7px 25px rgba(94, 94, 94, 0.8);
     font-size: 15px;
+    flex: 1 1 calc(33.3333% - 20px); /* Le card si distribuiscono in 3 colonne */
+    box-sizing: border-box; /* Assicura che le card non escano dallo spazio disponibile */
 }
 
 .card-title {
     text-align: center;
 }
+
 .btn {
     display: block;
     margin: 0 auto;
@@ -148,9 +145,9 @@
 
 .btn-primary {
     background-color: #2abfbf !important;
-  border-color: #2abfbf !important;
-  color: #fff !important;
-  border-radius: 20px !important;
+    border-color: #2abfbf !important;
+    color: #fff !important;
+    border-radius: 20px !important;
 }
 
 .btn-primary:hover {
@@ -159,33 +156,59 @@
     border-radius: 20px !important;
 }
 
-/* @media screen and (max-width: 576px) {
+/* media query per 768px*/
+@media screen and (max-width: 768px) {
     .title {
         display: none !important;
     }
+
     .navigation {
-        width: 120px;
+        width: 200px;
     }
+
     .main {
-        left: 200px;
+        left: 220px;
+        width: calc(100% - 220px); 
     }
-  } */
 
+    .row {
+        justify-content: space-between; 
+    }
 
+    .card {
+        flex: 1 1 calc(50% - 20px); 
+    }
 
+    .btn {
+        font-size: 14px;
+        padding: 7px 14px;
+    }
+}
+/* media query per 576px*/
+@media screen and (max-width: 576px) {
+    .title {
+        display: none !important;
+    }
 
+    .navigation {
+        width: 124px;
+    }
 
+    .main {
+        left: 130px;
+        width: calc(100% - 130px); 
+    }
 
+    .row {
+        justify-content: space-between; 
+    }
 
+    .card {
+        flex: 1 1 100%;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
+    .btn {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
