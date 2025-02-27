@@ -50,7 +50,7 @@ function updateUserUI() {
       userDropdown.innerHTML = `
     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
     <ul class="dropdown-menu dropdown-menu-end mt-3">
-        <li><a class="dropdown-item" href="#">Dashboard Admin</a></li>
+        <li><a class="dropdown-item" href="../dashboard-admin/dashboard-admin.html">Dashboard Admin</a></li>
         <li><a class="dropdown-item" href="#">Impostazioni</a></li>
         <li><a class="dropdown-item" href="" id="logout-button">Esci</a></li>
     </ul>
