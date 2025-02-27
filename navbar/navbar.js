@@ -20,9 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Forum</a>
-            </li>
 
           </ul>
         </div>
@@ -126,9 +123,21 @@ function updateUserUI() {
   } else {
     // Se l'utente non è autenticato, mostra il bottone di registrazione e login
     // Creazione del primo elemento <li> per la registrazione
-    const registerItem = document.createElement("li");
-    registerItem.className = "nav-item";
-    registerItem.innerHTML = `<a class="nav-link" onclick="window.location.href='../Register/register.html'" href="#">Registrati gratis</a>`;
+
+    const registerDropdown = document.createElement("li");
+    registerDropdown.id = "user-dropdown";
+    registerDropdown.className = "nav-item dropdown";
+    registerDropdown.innerHTML = `
+    <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Registrati gratis</button>
+    <ul class="dropdown-menu dropdown-menu-end mt-3">
+        <li><a class="dropdown-item" href="../register/register.html">Come paziente</a></li>
+        <li><a class="dropdown-item" href="../registerDoctor/register.html"">Come dottore</a></li>
+    </ul>
+`;
+
+    // const registerItem = document.createElement("li");
+    // registerItem.className = "nav-item";
+    // registerItem.innerHTML = `<a class="nav-link" onclick="window.location.href='../Register/register.html'" href="#">Registrati gratis</a>`;
 
     // Creazione del secondo elemento <li> per il login
     const loginItem = document.createElement("li");
@@ -136,7 +145,7 @@ function updateUserUI() {
     loginItem.innerHTML = `<a class="nav-link" onclick="window.location.href='../Login/login.html'" href="#">Login</a>`;
 
     // Aggiunta degli elementi al menu di navigazione
-    navList.appendChild(registerItem);
+    navList.appendChild(registerDropdown);
     navList.appendChild(loginItem);
 
     // Aggiungi l'event listener per il login simulato
