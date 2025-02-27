@@ -38,10 +38,6 @@
 
                                       <select multiple id="select-tags" class="form-control" style="margin-top: -10%; margin-bottom: -5%;">
                                         <option value="Amsterdam">Amsterdam</option>
-                                        <option value="Washington">Washington</option>
-                                        <option value="Sydney">Sydney</option>
-                                        <option value="Beijing">Beijing</option>
-                                        <option value="Cairo">Cairo</option>
                                     </select>
 
                                       <div class="mb-3" style="margin-top: 10%;">
@@ -88,7 +84,7 @@
 
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                                                    <button type="button" class="btn bottone" id="save-tags">Salva</button>
+                                                    <button type="button" class="btn bottone" id="save-tags" data-bs-dismiss="modal">Salva</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,7 +94,7 @@
 
 
                                     <div class="d-flex justify-content-end pt-3" style="margin-right: 5%; margin-bottom: 10%; margin-top: 34%;">
-                                      <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">Resetta
+                                      <button type="click" onclick="resetForm()" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">Resetta
                                         tutto</button>
                                       <button type="click" onclick="createDoctor()" data-mdb-button-init data-mdb-ripple-init class="btn btn-lg ms-2 bottone"
                                         style="background-color: #2ABFBF !important;">Salva</button>

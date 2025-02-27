@@ -13,33 +13,28 @@ function formatDate(date) {
 //Funzione per registrarsi
 function addUser(newUser) {
   newUser.dataNascita = formatDate(newUser.dataNascita);
+  console.log("User to send:", JSON.stringify(newUser)); 
   fetch("http://localhost:8080/user/verified", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      //...getAuthHeaders()
     },
     body: JSON.stringify(newUser),
   })
     .then((response) => {
       if (!response.ok) {
         return response.json().then((err) => {
-          console.error("Errore API:", err); // Aggiungi questo log per esaminare il contenuto della risposta
-          throw new Error(
-            `Errore: ${err.message || "Errore durante l'aggiunta dell'utente"}`
-          );
+          console.error("Errore API:", err);
+          throw new Error(`Errore: ${err.message || "Errore durante l'aggiunta dell'utente"}`);
         });
       }
       return response.json();
     })
     .then((data) => {
       if (data) {
-        //Lo salva in local storage
         localStorage.setItem("newUser", JSON.stringify(newUser));
         console.log("Registrazione effettuata:", data);
         window.alert("Registrazione effettuata.");
-
-        //Si deve spostare sulla pagina per continuare la registrazione
         location.replace("../registerDoctor/registerDoctor.html");
       }
     })
@@ -48,6 +43,7 @@ function addUser(newUser) {
       window.alert("Registrazione non andata a buon fine.");
     });
 }
+
 
 function calculateAge(birthday) {
   const today = new Date();
@@ -85,14 +81,14 @@ document
       codiceFiscale: document.getElementById("codiceFiscale").value,
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
-      confPassword: document.getElementById("confPassword").value,
     };
+
+    const confPassword= document.getElementById("confPassword").value;
 
     document.getElementById("cognome").style.borderColor =
       window.getComputedStyle(document.getElementById("email")).borderColor;
     document.getElementById("nome").style.borderColor = window.getComputedStyle(
-      document.getElementById("email")
-    ).borderColor;
+      document.getElementById("email")).borderColor;
     document.getElementById("dataNascita").style.borderColor =
       window.getComputedStyle(document.getElementById("email")).borderColor;
     document.getElementById("codiceFiscale").style.borderColor =
@@ -149,13 +145,13 @@ document
       return;
     }
 
-    if (!newUser.confPassword) {
+    if (!confPassword) {
       alert("Compila la password di conferma.");
       document.getElementById("confPassword").style.borderColor = "red";
       return;
     }
 
-    if (newUser.confPassword !== newUser.password) {
+    if (confPassword !== newUser.password) {
       alert("La password di conferma non corrisponde alla password.");
       document.getElementById("confPassword").style.borderColor = "red";
       return;

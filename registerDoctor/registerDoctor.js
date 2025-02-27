@@ -25,9 +25,9 @@ function fetchAllMedicalOffices() {
   });
 }
 
-// Funzione per prendere tutte le specializzazioni
+//Funzione per prendere tutte le specializzazioni
 function fetchAllSpecializations() {
-  fetch('http://localhost:8080/specialization/all', { // Assuming this is the correct endpoint
+  fetch('http://localhost:8080/specialization/all', { 
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -144,46 +144,72 @@ let saveTaginput;
 
 
 
-
+//Funzione per creare un dottore
 function createDoctor() {
+  // Acquisisco i valori del codice fiscale dello studio medico e l'user depositato in localStorage
   const codiceFiscale = document.getElementById('nome').value;
-  //const specializzazioni = $('#tags-input').tagsinput('items');
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('newUser'));
 
+  // Stampo i valori acquisiti
   console.log(user);
   console.log(codiceFiscale);
   console.log(saveTaginput);
 
-
-
+  // Controllo se i campi esistano
   if (!user || !codiceFiscale || saveTaginput.length === 0) {
       window.alert('Completa tutti i campi obbligatori.');
       return;
   }
 
-  const requestData = {
-      user: user,
-      codiceFiscale: codiceFiscale,
-      nomeSpecializzazione: saveTaginput
-  };
+  // Convertiamo l'array di specializzazioni in una stringa separata da virgole
+  const specializzazioniString = saveTaginput.join(',');
 
-  fetch('http://localhost:8080/doctor', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(requestData),
+  // Url per l'endpoint
+  const url = `http://localhost:8080/doctor/${encodeURIComponent(codiceFiscale)}/${encodeURIComponent(specializzazioniString)}`;
+
+  // Mando la richiesta per creare il dottore
+  fetch(url, { 
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    // Mando come body l'user in formato JSON
+    body: JSON.stringify(user)
   })
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      return response.json().then(err => {
+        console.error('Errore API:', err); 
+        throw new Error(`Errore: ${err.message || "Errore durante l'aggiunta dell'utente"}`);
+      });
+    }
+    return response.json();
+  })
   .then(data => {
-      console.log('Success:', data);
+    console.log('registrazione effettuata:', data);
+    window.alert("Registrazione effettuata.");
+    location.replace("../success.html");
   })
-  .catch((error) => {
-      console.error('Error:', error);
+  .catch(error => {
+    console.error("Errore nell'aggiunta dell'utente:", error);
+    window.alert("Registrazione non andata a buon fine.");
   });
 };
 
 
+function resetForm() {
+  //Reset del campo
+  document.getElementById("nome").value = null;
+
+  //Rimuovi i tag
+  /*
+  const tagContainer = document.getElementById('tags-input').parentNode;
+  while (tagContainer.firstChild) {
+    tagContainer.removeChild(tagContainer.firstChild);
+  }
+  saveTaginput = '';
+  console.log(saveTaginput);*/
+}
 
 
 $(document).ready(function() {
@@ -191,30 +217,53 @@ $(document).ready(function() {
 
   //aggiunge i tag dopo che hai cliccato il menu a tendina
   $('#select-tags, #select-tags-modal').on('change', function() {
-      const selectedOptions = $(this).val();
-      const tagsInput = $('#tags-input');
-      selectedOptions.forEach(option => {
-          if (!tagsInput.tagsinput('items').includes(option)) {
-              tagsInput.tagsinput('add', option);
-          }
-      });
+    const selectedOptions = $(this).val();
+    const tagsInput = $('#tags-input');
+    selectedOptions.forEach(option => {
+      if (!tagsInput.tagsinput('items').includes(option)) {
+        tagsInput.tagsinput('add', option);
+      }
+    });
   });
 
   $('input[data-role="tagsinput"]').on('itemAdded', function(event) {
-      let $tag = $('input[data-role="tagsinput"]').siblings('.bootstrap-tagsinput').children('.badge');
-      $tag.append('<span data-role="remove" style="margin-left: 10px; cursor: pointer;">&times;</span>');
+    let $tag = $('input[data-role="tagsinput"]').siblings('.bootstrap-tagsinput').children('.badge');
+    $tag.append('<span data-role="remove" style="margin-left: 10px; cursor: pointer;">&times;</span>');
   });
 
   $(document).on('click', '[data-role="remove"]', function(event) {
-      let $tag = $(this).closest('.badge');
+    let $tag = $(this).closest('.badge');
+    if ($tag.contents().get(0)) {
       let tagText = $tag.contents().get(0).nodeValue.trim();
       $('input[data-role="tagsinput"]').tagsinput('remove', tagText);
+
+      console.log(saveTaginput);
+      // Rimuove il tag anche da saveTaginput
+      saveTaginput = saveTaginput.filter(tag => tag !== tagText);
+      console.log(saveTaginput);
+    }
   });
 
-      //Aggiunta della funzione di salvataggio dei tag
-      $('#save-tags').on('click', function() {
-          const tagsInput = $('#tags-input').tagsinput('items');
-          console.log('Tags salvati:', tagsInput); 
-          saveTaginput= tagsInput;
-      });
+  //Aggiunta della funzione di salvataggio dei tag
+  $('#save-tags').on('click', function() {
+    const tagsInput = $('#tags-input').tagsinput('items');
+    console.log('Tags salvati:', tagsInput); 
+    saveTaginput = tagsInput;
+    console.log(saveTaginput);
+  });
 });
+
+$('#save-tags').on('click', function() {
+  const tagsInput = $('#tags-input').tagsinput('items');
+  console.log('Tags salvati:', tagsInput);
+  saveTaginput = tagsInput;
+
+  // Verifica che ci siano tag da inviare
+  if (saveTaginput.length === 0) {
+      window.alert('Devi selezionare almeno una specializzazione.');
+      return;
+  }
+  console.log(saveTaginput);
+});
+
+
