@@ -17,6 +17,7 @@
     border-left: 10px solid var(--blue);
     transition: 0.5s;
     overflow: hidden;
+    margin-top: 60px;
 }
 
 .navigation ul {
