@@ -29,7 +29,6 @@ html, body {
     color: white;
     padding: 5px 20px;
     width: 100%;
-    min-height: 50vh;
     margin: 0;
 }
 
@@ -42,7 +41,6 @@ html, body {
 
 /* Margine superiore extra nel footer */
 #bottom .row {
-    margin-top: 20px; /* Modifica per maggiore spazio sopra */
     padding: 0;
 }
 
@@ -69,7 +67,7 @@ html, body {
     justify-content: center;
     gap: 15px;
     margin-top: 10px;
-    margin-bottom: 30px !important; /* Aumentato lo spazio sotto */
+
 }
 
 /* Stile contatti */
