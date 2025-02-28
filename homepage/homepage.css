@@ -6,6 +6,10 @@ header {
   background-color: #36d9d9;
 }
 
+.header-bg {
+  margin-top: 70px;
+}
+
 .btn-custom {
   background-color: #2abfbf !important; /* Cambia il colore di sfondo */
   border-color: #2abfbf !important; /* Cambia il colore del bordo */
