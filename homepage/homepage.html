@@ -16,8 +16,14 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!-- FontAwesome per le icone -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link href="../homepage/homepage.css" rel="stylesheet" />
     <link href="../navbar/navbar.css" rel="stylesheet" />
+    <link href="../elencostudi/CSS/style.css" rel="stylesheet" />
   </head>
   <body>
     <nav
@@ -79,9 +85,9 @@
                   aria-label="Enter search term..."
                   aria-describedby="button-search"
                 />
-                <button class="btn btn-custom" id="button-search" type="button">
+                <a class="btn btn-custom" id="button-search" type="button" href="../elenco-dott/cards-dott.html">
                   Go!
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -216,6 +222,8 @@
       </div>
       <!-- /.row -->
     </div>
+    <!-- Footer -->
+    <footer class="mt-5" id="bottom"></footer>
     <!-- bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -229,5 +237,6 @@
     ></script>
     <script src="../homepage/homepage.js"></script>
     <script src="../navbar/navbar.js"></script>
+    <script src="../elencostudi/JS/footer.js"></script>
   </body>
 </html>

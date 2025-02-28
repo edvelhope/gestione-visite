@@ -1,3 +1,7 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 .card{
   width: 400px;
  justify-content: left;
@@ -6,7 +10,7 @@
  overflow: hidden;
  padding: 7px;
  margin-bottom: 15px;
- 
+
 }
 #contenitore{
   display: flex;
@@ -45,13 +49,20 @@ justify-content: center;
   margin-left: 20px;
   margin-top: 20;
 }
+#dott{
+  border-radius: 20px;
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center;
 
-#invio,.btn-btn-primary,button {
+}
+
+.btn-primary, .btn-custom {
   background-color: #2abfbf !important; /* Cambia il colore di sfondo */
   border-color: #2abfbf !important; /* Cambia il colore del bordo */
   color: #fff !important; /* Cambia il colore del testo */
 }
-#citta,.btn-btn-primary,button,#nome {
+.btn-primary, .btn-custom {
   background-color: #269c9c !important; /* Cambia colore al passaggio del mouse */
   border-color: #269c9c !important;
 }

@@ -5,12 +5,13 @@
 body {
     font-family: "Montserrat", sans-serif !important;
 }
-/* inizio modifica img*/ 
+
+/* inizio modifica img*/
 .user-img {
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    margin: 5% 15% 5% 31%;
+    margin: 5% auto; 
 }
 
 #photo {
@@ -30,33 +31,30 @@ body {
     padding: 5px 6px 4px 8px;
     border-radius: 50%;
     cursor: pointer;
-    color:#696161;
+    color: #696161;
     transform: translateX(-90%);
     margin-top: 100px;
-    background-color: rgb(173, 172,172, 0.801);
-    box-shadow: 2px 4px 4px rgb(0, 0,0, 0.0.644);
-
+    background-color: rgb(173, 172, 172, 0.801);
+    box-shadow: 2px 4px 4px rgb(0, 0, 0, 0.644);
 }
-/* fine modifica img*/ 
+/* fine modifica img*/
 
 .info {
     text-align: left;
     margin: 60px 0 25px 5px;
-
 }
 
 .container {
     margin-top: 5px;
 }
+
 .input-container {
     position: relative;
-    
 }
   
 .input-container input {
     width: 100%;
-    padding-right: 32px; 
-    
+    padding-right: 32px;
 }
   
 .input-container i {
@@ -65,16 +63,15 @@ body {
     transform: translateY(-50%);
     font-size: 20px;
     cursor: pointer;
-    
 }
   
 #eyeIcon {
     right: 40px; 
 }
   
- #eyeSlashIcon {
+#eyeSlashIcon {
     right: 40px; 
-    display: none; /*  nascosto */
+    display: none; 
 }
   
 .fa-solid.fa-pen {
@@ -84,9 +81,9 @@ body {
 
 .btn-primary {
     background-color: #2abfbf !important; 
-  border-color: #2abfbf !important; 
-  color: #fff !important; 
-  border-radius: 20px !important;
+    border-color: #2abfbf !important; 
+    color: #fff !important; 
+    border-radius: 20px !important;
 }
 
 .btn-primary:hover {
@@ -95,8 +92,7 @@ body {
     border-radius: 20px !important;
 }
 
-
-.nav-link.active, .nav-pills .show>.nav-link {
+.nav-link.active, .nav-pills .show > .nav-link {
     background-color: #2abfbf !important; 
     border-color: #2abfbf !important; 
     color: #fff !important; 
@@ -116,31 +112,29 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px; 
-    
 }
 
 .giorno {
     display: flex;
     align-items: center;
     gap: 15px; 
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 input[type="checkbox"] {
-    appearance: none; /* toglie predefinito */
+    appearance: none; 
     width: 13px;
     height: 13px;
-    border-radius: 50%; /* checkbox tondo */
+    border-radius: 50%; 
     border: 1px solid #5f5f5f; 
     display: inline-block;
     cursor: pointer;
     margin-right: 10px;
 }
 
-/* quando è selezionato */
-input[type="checkbox"]:checked {
-    background-color: #2287f3; /* blu */
 
+input[type="checkbox"]:checked {
+    background-color: #2287f3; 
 }
 
 input[type="time"] {
@@ -148,7 +142,60 @@ input[type="time"] {
     border-radius: 20px;
     border: 1px solid #ccc;
     font-size: 14px;
-    outline: none; /* toglie bordo */
+    outline: none; 
+}
+
+/* media query*/
+
+
+@media screen and (max-width: 768px) {
+    .user-img, #photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    #uploadbtn {
+        margin-top: 80px;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .info {
+        margin: 40px 10px;
+    }
+
+    .titoloPrenotazioni {
+        margin: 30px 0;
+    }
+
+    .container {
+        margin-top: 10px;
+    }
 }
 
 
+@media screen and (max-width: 480px) {
+    .user-img, #photo {
+        width: 90px;
+        height: 90px;
+        margin: 5% auto;
+    }
+
+    #uploadbtn {
+        margin-top: 60px;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .info {
+        margin: 30px 10px;
+    }
+
+    .input-container input {
+        font-size: 14px;
+    }
+
+    .titoloPrenotazioni {
+        margin: 20px 0;
+    }
+}

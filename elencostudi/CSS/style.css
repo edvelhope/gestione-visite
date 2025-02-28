@@ -100,3 +100,8 @@ html, body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.custom-btn {
+    color: rgb(226, 226, 226);
+}
+
