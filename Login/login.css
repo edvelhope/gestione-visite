@@ -10,6 +10,6 @@ body{
     transition: transform 0.3s ease;
 }
 
-button:hover {
-    transform: scale(1.2); 
+.bottone:hover {
+    transform: scale(1.2);
 }
