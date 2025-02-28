@@ -40,7 +40,7 @@ function controllaSpecializzazione() {
 
 
 
-<script>
+/*<script>
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -52,4 +52,4 @@ function controllaSpecializzazione() {
         });
         calendar.render();
       });
-    </script>
+    </script>*/
