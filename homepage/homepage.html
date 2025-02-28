@@ -79,18 +79,17 @@
             <div class="card-body">
               <div class="input-group">
                 <input
+                  id="search-input"
                   class="form-control"
                   type="text"
                   placeholder="es. medico, specializzazione"
                   aria-label="Enter search term..."
-                  aria-describedby="button-search"
                 />
-                <a class="btn btn-custom" id="button-search" type="button" href="../elenco-dott/cards-dott.html">
-                  Go!
-                </a>
+                <button class="btn btn-custom" id="button-search" type="button">Go!</button>
               </div>
+              <div id="dropdown-results" class="dropdown-menu" style="display: none;"></div>
             </div>
-          </div>
+          </div>          
           <!-- Categories widget-->
           <div class="card mb-4">
             <div class="card-header">Specializzazioni</div>
@@ -115,10 +114,10 @@
           </div>
           <!-- Side widget-->
           <div class="card mb-4">
-            <div class="card-header">Side Widget</div>
+            <div class="card-header">Aggiornamenti</div>
             <div class="card-body">
-              You can put anything you want inside of these side widgets. They
-              are easy to use, and feature the Bootstrap 5 card component!
+              Abbiamo appena rilasciato un aggiornamento per migliorare la tua esperienza: prenotazioni più rapide, visualizzazione in tempo reale delle disponibilità e notifiche personalizzate. Naviga più facilmente e gestisci gli appuntamenti con maggiore comodità.
+              Grazie per scegliere il nostro servizio!
             </div>
           </div>
         </div>
@@ -127,101 +126,59 @@
     <div class="container mb-4">
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-lg-4 d-flex">
+        <div class="col-lg-4 d-flex card-container">
           <div class="card d-flex flex-column h-100 p-3">
-            <svg
+            <img
               class="bd-placeholder-img rounded-circle"
               width="140"
               height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
-            <h2 class="fw-normal">Heading</h2>
-            <p>
-              Some representative placeholder content for the three columns of
-              text below the carousel. This is the first column.
-            </p>
+              src=""
+              alt="Placeholder"
+            />
+            <h2 class="fw-normal">Heading 1</h2>
+            <p>Descrizione per la prima card.</p>
             <div class="mt-auto">
-              <a class="btn btn-secondary" href="#">View details »</a>
+              <a class="btn btn-secondary" id="prenota-1" href="#">Prenota</a>
             </div>
           </div>
         </div>
-
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4 d-flex">
+    
+        <div class="col-lg-4 d-flex card-container">
           <div class="card d-flex flex-column h-100 p-3">
-            <svg
+            <img
               class="bd-placeholder-img rounded-circle"
               width="140"
               height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
-            <h2 class="fw-normal">Heading</h2>
-            <p>
-              Another exciting bit of representative placeholder content. This
-              time, we've moved on to the second column.
-            </p>
+              src=""
+              alt="Placeholder"
+            />
+            <h2 class="fw-normal">Heading 2</h2>
+            <p>Descrizione per la seconda card.</p>
             <div class="mt-auto">
-              <a class="btn btn-secondary" href="#">View details »</a>
+              <a class="btn btn-secondary" id="prenota-2" href="#">Prenota</a>
             </div>
           </div>
         </div>
-
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4 d-flex">
+    
+        <div class="col-lg-4 d-flex card-container">
           <div class="card d-flex flex-column h-100 p-3">
-            <svg
+            <img
               class="bd-placeholder-img rounded-circle"
               width="140"
               height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
-            <h2 class="fw-normal">Heading</h2>
-            <p>
-              And lastly this, the third column of representative placeholder
-              content.
-            </p>
+              src=""
+              alt="Placeholder"
+            />
+            <h2 class="fw-normal">Heading 3</h2>
+            <p>Descrizione per la terza card.</p>
             <div class="mt-auto">
-              <a class="btn btn-secondary" href="#">View details »</a>
+              <a class="btn btn-secondary" id="prenota-3" href="#">Prenota</a>
             </div>
           </div>
         </div>
-        <!-- /.col-lg-4 -->
       </div>
-      <!-- /.row -->
     </div>
+    
     <!-- Footer -->
     <footer class="mt-5" id="bottom"></footer>
     <!-- bootstrap -->
