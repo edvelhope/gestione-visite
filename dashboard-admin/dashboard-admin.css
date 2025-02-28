@@ -34,6 +34,7 @@
     list-style: none;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
+    margin-bottom: 50px;
 }
 
 .navigation ul li:hover {
@@ -115,13 +116,13 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-    justify-content: flex-start; /* Allinea gli elementi all'inizio */
+    justify-content: flex-start;
 }
 
 .main {
     position: absolute;
     left: 300px;
-    width: calc(100% - 300px); /* La larghezza della main si adatta accanto alla navigation */
+    width: calc(100% - 300px);
     margin-top: 20px;
 }
 
@@ -130,8 +131,7 @@
     margin: 10px;
     box-shadow: 0 7px 25px rgba(94, 94, 94, 0.8);
     font-size: 15px;
-    flex: 1 1 calc(33.3333% - 20px); /* Le card si distribuiscono in 3 colonne */
-    box-sizing: border-box; /* Assicura che le card non escano dallo spazio disponibile */
+    flex: 1 1 calc(33.3333% - 20px); 
 }
 
 .card-title {
@@ -156,6 +156,42 @@
     border-color: #269c9c !important;
     border-radius: 20px !important;
 }
+
+.navigation ul li.active {
+    background-color: white;
+}
+
+.navigation ul li.active a {
+    color: #727273;
+}
+
+
+.navigation ul li.active a::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px white; 
+    pointer-events: none;
+}
+
+.navigation ul li.active a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px white; 
+    pointer-events: none;
+}
+
 
 /* media query per 768px*/
 @media screen and (max-width: 768px) {
