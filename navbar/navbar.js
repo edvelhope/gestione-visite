@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="navbar-collapse collapse" id="navbarsExample09">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="../homepage/homepage.html">Home</a>
             </li>
 
           </ul>
@@ -48,7 +48,7 @@ function updateUserUI() {
     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
     <ul class="dropdown-menu dropdown-menu-end mt-3">
         <li><a class="dropdown-item" href="../dashboard-admin/dashboard-admin.html">Dashboard Admin</a></li>
-        <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+        <li><a class="dropdown-item" href="../elencostudi/elencoStudiMedici.html">Elenco studi medici</a></li>
         <li><a class="dropdown-item" href="" id="logout-button">Esci</a></li>
     </ul>
 `;
