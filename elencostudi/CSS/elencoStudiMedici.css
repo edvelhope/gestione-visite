@@ -6,22 +6,14 @@
   text-align: center;
 }
 
-.card-img-top {
-  width: 100%;
-  height: 300px; /* Imposta un'altezza fissa per tutte le immagini */
-  object-fit: cover; /* Evita deformazioni nelle immagini */
-}
-
 .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Assicura che il titolo parta sempre dall'alto */
+  justify-content: flex-end; /* Assicura che il titolo parta sempre dall'alto */
   align-items: center;
-  min-height: 120px; /* Altezza minima per mantenere la stessa struttura */
 }
 
 .card-title {
-  min-height: 50px; /* Imposta un'altezza minima per uniformare la posizione */
   display: flex;
   align-items: center;
 }
@@ -39,5 +31,16 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.btn-primary {
+  background-color: #2abfbf !important; /* Cambia il colore di sfondo */
+  border-color: #2abfbf !important; /* Cambia il colore del bordo */
+  color: #fff !important; /* Cambia il colore del testo */
+}
+
+.btn-primary:hover {
+  background-color: #269c9c !important; /* Cambia colore al passaggio del mouse */
+  border-color: #269c9c !important;
 }
