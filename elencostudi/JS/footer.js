@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("bottom").innerHTML = `
-        <div class="container">
+        <div class="container pt-5">
       <div class="row">
         <div class="col text-white p-0">
           <ul>
@@ -36,9 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <p>Gestione Visite Italy S.r.l. - Piazza San Nicola 3 - 00072 Ariccia (RM), Italia - Partita IVA e codice
             Fiscale 03244550863</p>
         </div>
-      </div>
-
-      <section class="social mb-4">
+        <section class="social mb-4">
         <a class="btn m-1 custom-btn m-1" style="background-color: #3b5998" href="#" role="button">
           <i class="fab fa-facebook-f"></i>
         </a>
@@ -52,6 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
           <i class="fab fa-linkedin-in"></i>
         </a>
       </section>
+      </div>
+
+      
     </div>
     `;
 });
