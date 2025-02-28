@@ -36,3 +36,20 @@ function controllaSpecializzazione() {
   // Se è stata selezionata una specializzazione, puoi procedere
   return true; // Permette l'invio del modulo
 }
+
+
+
+
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          selectable: true,
+          dateClick: function(info) {
+            alert('Hai selezionato: ' + info.dateStr);
+          }
+        });
+        calendar.render();
+      });
+    </script>
