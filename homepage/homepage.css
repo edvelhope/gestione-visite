@@ -21,6 +21,20 @@ header {
   border-color: #269c9c !important;
 }
 
+.card-container {
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+.custom-card {
+  width: 100%;
+  gap: 10px;
+}
+  .custom-row {
+    gap: 1rem;
+  }
+}
+
 @media (min-width: 1200px) {
   .header-bg {
     background-image: url("../homepage/assets/immagine.png");

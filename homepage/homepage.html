@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="logo" href="../navbar/logo.png" id="icona">   
+    <link rel="icon" type="logo" href="../navbar/logo.png" id="icona" />
     <title>MediCare</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,7 +43,7 @@
       </div>
     </header>
     <!-- Page content-->
-    <div class="container">
+    <div class="container mb-3">
       <div class="row">
         <!-- Blog entries-->
         <div class="col-lg-8">
@@ -86,11 +86,17 @@
                   placeholder="es. medico, specializzazione"
                   aria-label="Enter search term..."
                 />
-                <button class="btn btn-custom" id="button-search" type="button">Go!</button>
+                <button class="btn btn-custom" id="button-search" type="button">
+                  Go!
+                </button>
               </div>
-              <div id="dropdown-results" class="dropdown-menu" style="display: none;"></div>
+              <div
+                id="dropdown-results"
+                class="dropdown-menu"
+                style="display: none"
+              ></div>
             </div>
-          </div>          
+          </div>
           <!-- Categories widget-->
           <div class="card mb-4">
             <div class="card-header">Specializzazioni</div>
@@ -98,16 +104,52 @@
               <div class="row">
                 <div class="col-sm-6">
                   <ul class="list-unstyled mb-0">
-                    <li><a href="#!">Cardiologo</a></li>
-                    <li><a href="#!">Dermatologo</a></li>
-                    <li><a href="#!">Medico di base</a></li>
+                    <li>
+                      <a
+                        class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover"
+                        href="#!"
+                        >Cardiologo</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover"
+                        href="#!"
+                        >Dermatologo</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover"
+                        href="#!"
+                        >Medico di base</a
+                      >
+                    </li>
                   </ul>
                 </div>
                 <div class="col-sm-6">
                   <ul class="list-unstyled mb-0">
-                    <li><a href="#!">Urogolo</a></li>
-                    <li><a href="#!">Dentista</a></li>
-                    <li><a href="#!">Pediatra</a></li>
+                    <li>
+                      <a
+                        class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover"
+                        href="#!"
+                        >Urogolo</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover"
+                        href="#!"
+                        >Dentista</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover"
+                        href="#!"
+                        >Pediatra</a
+                      >
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -117,8 +159,10 @@
           <div class="card mb-4">
             <div class="card-header">Aggiornamenti</div>
             <div class="card-body">
-              Abbiamo appena rilasciato un aggiornamento per migliorare la tua esperienza: prenotazioni più rapide, visualizzazione in tempo reale delle disponibilità e notifiche personalizzate. Naviga più facilmente e gestisci gli appuntamenti con maggiore comodità.
-              Grazie per scegliere il nostro servizio!
+              Abbiamo appena rilasciato un aggiornamento per migliorare la tua
+              esperienza: prenotazioni più rapide, visualizzazione in tempo
+              reale delle disponibilità. Grazie per scegliere il nostro
+              servizio!
             </div>
           </div>
         </div>
@@ -126,9 +170,10 @@
     </div>
     <div class="container mb-4">
       <!-- Three columns of text below the carousel -->
-      <div class="row">
+      <div class="row custom-row">
+        <div class="d-flex justify-content-center mb-4"><h2 class="card-title">I nostri medici</h2></div>
         <div class="col-lg-4 d-flex card-container">
-          <div class="card d-flex flex-column h-100 p-3">
+          <div class="card d-flex flex-column h-100 p-4 custom-card">
             <img
               class="bd-placeholder-img rounded-circle"
               width="140"
@@ -143,9 +188,9 @@
             </div>
           </div>
         </div>
-    
+
         <div class="col-lg-4 d-flex card-container">
-          <div class="card d-flex flex-column h-100 p-3">
+          <div class="card d-flex flex-column h-100 p-4 custom-card">
             <img
               class="bd-placeholder-img rounded-circle"
               width="140"
@@ -160,9 +205,9 @@
             </div>
           </div>
         </div>
-    
+
         <div class="col-lg-4 d-flex card-container">
-          <div class="card d-flex flex-column h-100 p-3">
+          <div class="card d-flex flex-column h-100 p-4 custom-card">
             <img
               class="bd-placeholder-img rounded-circle"
               width="140"
@@ -179,7 +224,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Footer -->
     <footer class="mt-5" id="bottom"></footer>
     <!-- bootstrap -->

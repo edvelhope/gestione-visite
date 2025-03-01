@@ -2,21 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("bottom").innerHTML = `
         <div class="container pt-5">
       <div class="row">
-        <div class="col text-white p-0">
+        <div class="col text-white p-2">
           <ul>
             <li><a href="#">I nostri Dottori</a></li>
             <li><a href="../elencostudi/html/elencoStudiMedici.html">I nostri Studi Medici</a></li>
             <li><a href="../elencostudi/html/elencoPrestazioni.html">Prestazioni Disponibili</a></li>
           </ul>
         </div>
-        <div class="col text-white p-0">
+        <div class="col text-white p-2">
           <ul>
             <li><a href="#">GDPR e informazioni relative ai pagamenti</a></li>
             <li><a href="#">Privacy e cookies</a></li>
             <li><a href="#">Preferenze cookie</a></li>
           </ul>
         </div>
-        <div class="col text-white p-0">
+        <div class="col text-white p-2">
           <ul>
             <li><a href="#">Contatti</a></li>
           </ul>
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
         </div>
-        <div class="col text-white p-0">
+        <div class="col text-white p-2">
           <ul>
             <li><a href="#">Informazioni dell’impresa</a></li>
           </ul>
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </section>
       </div>
 
-      
+
     </div>
     `;
 });
