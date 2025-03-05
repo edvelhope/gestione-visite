@@ -17,6 +17,29 @@ file.addEventListener('change', function() {
     }
 })
 
+//Per modificare la bio
+function autoResize(textarea) {
+  textarea.style.height = 'auto';
+  textarea.style.height = textarea.scrollHeight + 'px';
+}
+
+document.querySelector('.edit-icon').addEventListener('click', function(e) {
+  e.preventDefault();
+  const textarea = e.target.closest('p').querySelector('.editable');
+  
+  if (textarea.hasAttribute('readonly')) {
+    textarea.removeAttribute('readonly');
+    textarea.focus();
+  } else {
+    textarea.setAttribute('readonly', true);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  const textareas = document.querySelectorAll('.editable');
+  textareas.forEach(textarea => autoResize(textarea));
+});
+
 /*
 document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('authToken');
