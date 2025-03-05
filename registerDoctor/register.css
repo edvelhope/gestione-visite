@@ -19,8 +19,11 @@
         color: white;
         transition: transform 0.3s ease;
     }
-    
+
     .bottone:hover {
-        transform: scale(1.2); 
+        transform: scale(1.2);
     }
-    
+
+    .custom-register {
+        margin-top: 70px;
+    }
