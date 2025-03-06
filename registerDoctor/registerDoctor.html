@@ -89,6 +89,7 @@
                       </div>
                     </fieldset>
 
+                    <!--
                     <button
                       type="button"
                       class="btn bottone"
@@ -99,8 +100,9 @@
                     >
                       Specializzazioni
                     </button>
-
+                    -->
                     <!-- Modal -->
+                     <!-- 
                     <div
                       class="modal fade"
                       id="exampleModal"
@@ -125,6 +127,7 @@
                           <div class="modal-body">
                             <div class="container mt-5">
                               <!-- Selettore con tags -->
+                               <!--
                               <select
                                 multiple
                                 id="select-tags-modal"
@@ -133,8 +136,17 @@
                               >
                                 <option value="Amsterdam">Amsterdam</option>
                                 <!--Qui vanno inserite le specializzazione-->
-                              </select>
-
+                              <!--</select>-->
+                              <div class="form-floating">
+                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example" required>
+                                  <option selected value="">-- Seleziona una specializzazione --</option>
+                                  <option value="1">Dermatologia</option>
+                                  <option value="2">Neurologia</option>
+                                  <option value="3">Cardiologia</option>
+                                </select>
+                                <label for="floatingSelect">Seleziona la tua specializzazione</label>
+                              </div>
+                              <!--
                               <div class="container mt-5">
                                 <h4>Specializzazioni selezionate</h4>
                                 <input
@@ -168,6 +180,7 @@
                         </div>
                       </div>
                     </div>
+                  -->
 
                     <div
                       class="d-flex justify-content-end pt-3"

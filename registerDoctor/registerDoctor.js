@@ -27,7 +27,7 @@ function fetchAllMedicalOffices() {
 
 //Funzione per prendere tutte le specializzazioni
 function fetchAllSpecializations() {
-  fetch('http://localhost:8080/specialization/all', { 
+  fetch('http://localhost:8080/doctor/specialization', { 
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -44,49 +44,12 @@ function fetchAllSpecializations() {
   })
   .then(data => {
     console.log('Specializzazioni:', data);
-    populateSpecializationSelect(data);
+    populateSpecializationSelect(data); // Passa i dati alla funzione per popolare il select
   })
   .catch(error => {
     console.error("Errore nel recupero delle specializzazioni:", error);
     window.alert("Recupero delle specializzazioni non andato a buon fine.");
   });
-}
-
-//Inserisce tutti gli studi medici nella select tags
-function populateMedicalOfficesSelect(data) {
-  const selectElement = document.getElementById('select-tags');
-  selectElement.innerHTML = ''; 
-
-  data.forEach(office => {
-    const option = document.createElement('option');
-    option.value = office.nome;
-    option.textContent = office.nome;
-    selectElement.appendChild(option);
-  });
-}
-
-// Inserisce tutte le specializzazioni nella select tags
-function populateSpecializationSelect(data) {
-  const selectElement = document.getElementById('select-tags-modal');
-  if (!selectElement) {
-    console.error("Elemento select-tags-modal non trovato!");
-    return;
-  }
-
-  selectElement.innerHTML = ''; 
-
-  console.log(data); 
-
-  if (data && Array.isArray(data)) { 
-    data.forEach(specialization => {
-      const option = document.createElement('option');
-      option.value = specialization.field;
-      option.textContent = specialization.field;
-      selectElement.appendChild(option);
-    });
-  } else {
-    console.error("Dati non validi o nulli:", data);
-  }
 }
 
 //Metodo per scrivere il codice fiscale in automatico
@@ -120,6 +83,46 @@ function fetchAndPopulateFiscalCode(studioNome) {
   });
 }
 
+
+
+/*
+
+---------Da rifarre
+
+
+*/
+
+//Inserisce tutti gli studi medici nella select tags
+function populateMedicalOfficesSelect(data) {
+  const selectElement = document.getElementById('select-tags');
+  selectElement.innerHTML = ''; 
+
+  data.forEach(office => {
+    const option = document.createElement('option');
+    option.value = office.nome;
+    option.textContent = office.nome;
+    selectElement.appendChild(option);
+  });
+}
+
+// Inserisce tutte le specializzazioni
+function populateSpecializationSelect(data) {
+  const selectElement = document.getElementById('floatingSelect');
+
+  // Rimuovi tutte le opzioni esistenti, tranne quella predefinita
+  selectElement.innerHTML = '<option selected value="">-- Seleziona una specializzazione --</option>';
+
+  // Aggiungi ogni specializzazione come opzione
+  data.forEach((specialization, index) => {
+    const option = document.createElement('option');
+    option.value = index + 1; // Usa l'indice come valore (ad esempio, 1 per la prima specializzazione)
+    option.textContent = specialization; // Usa direttamente il nome della specializzazione
+    selectElement.appendChild(option);
+  });
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   fetchAllMedicalOffices();
 
@@ -130,140 +133,80 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+//Al caricamento nel elemento floatingSelect
 document.addEventListener('DOMContentLoaded', () => {
-  const modalElement = document.getElementById('exampleModal');
-  modalElement.addEventListener('shown.bs.modal', () => {
-    fetchAllSpecializations();
-  });
+  fetchAllSpecializations();
 });
 
 
 
-
-let saveTaginput;
 
 
 
 //Funzione per creare un dottore
 function createDoctor() {
-  // Acquisisco i valori del codice fiscale dello studio medico e l'user depositato in localStorage
-  const codiceFiscale = document.getElementById('nome').value;
-  const user = JSON.parse(localStorage.getItem('newUser'));
+  //Recupera l'opzione selezionata per la specializzazione
+  const selectElement = document.getElementById("floatingSelect");
+  const selectedSpecialization = selectElement.options[selectElement.selectedIndex].textContent; //Testo dell'opzione selezionata
 
-  // Stampo i valori acquisiti
-  console.log(user);
-  console.log(codiceFiscale);
-  console.log(saveTaginput);
-
-  // Controllo se i campi esistano
-  if (!user || !codiceFiscale || saveTaginput.length === 0) {
-      window.alert('Completa tutti i campi obbligatori.');
-      return;
+  //Verifica che una specializzazione valida sia selezionata
+  if (!selectedSpecialization || selectedSpecialization === "-- Seleziona una specializzazione --") {
+    alert("Per favore, seleziona una specializzazione valida!");
+    selectElement.focus();
+    return; //Blocca l'esecuzione
   }
 
-  // Convertiamo l'array di specializzazioni in una stringa separata da virgole
-  const specializzazioniString = saveTaginput.join(',');
+  //Acquisisci il valore del codice fiscale dallo studio medico
+  const codiceFiscale = document.getElementById('nome').value;
 
-  // Url per l'endpoint
-  const url = `http://localhost:8080/doctor/${encodeURIComponent(codiceFiscale)}/${encodeURIComponent(specializzazioniString)}`;
+  //Recupera l'oggetto utente dal localStorage
+  const user = JSON.parse(localStorage.getItem('newUser'));
 
-  // Mando la richiesta per creare il dottore
-  fetch(url, { 
+  console.log("Dati User:", user);
+  console.log("Codice Fiscale:", codiceFiscale);
+  console.log("Specializzazione selezionata:", selectedSpecialization);
+
+  //Verifica che i campi obbligatori siano completi
+  if (!user || !codiceFiscale) {
+    window.alert('Completa tutti i campi obbligatori.');
+    return;
+  }
+
+  //URL per l'endpoint
+  const url = `http://localhost:8080/doctor/${encodeURIComponent(codiceFiscale)}/${encodeURIComponent(selectedSpecialization)}`;
+
+  fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    // Mando come body l'user in formato JSON
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   })
-  .then(response => {
-    if (!response.ok) {
-      return response.json().then(err => {
-        console.error('Errore API:', err); 
-        throw new Error(`Errore: ${err.message || "Errore durante l'aggiunta dell'utente"}`);
-      });
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('registrazione effettuata:', data);
-    window.alert("Registrazione effettuata.");
-    location.replace("../success.html");
-  })
-  .catch(error => {
-    console.error("Errore nell'aggiunta dell'utente:", error);
-    window.alert("Registrazione non andata a buon fine.");
-  });
-};
-
-
-function resetForm() {
-  //Reset del campo
-  document.getElementById("nome").value = null;
-
-  //Rimuovi i tag
-  /*
-  const tagContainer = document.getElementById('tags-input').parentNode;
-  while (tagContainer.firstChild) {
-    tagContainer.removeChild(tagContainer.firstChild);
-  }
-  saveTaginput = '';
-  console.log(saveTaginput);*/
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(err => {
+          console.error('Errore API:', err);
+          throw new Error(`Errore: ${err.message || "Errore durante l'aggiunta dell'utente"}`);
+        });
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Registrazione effettuata con successo:', data);
+      window.alert("Registrazione effettuata!");
+      location.replace("../success.html"); // Redirect a pagina di successo
+    })
+    .catch(error => {
+      console.error("Errore nell'aggiunta dell'utente:", error);
+      window.alert("Registrazione non andata a buon fine.");
+    });
 }
 
+function resetForm() {
+  //Reset del campo "nome"
+  document.getElementById("nome").value = null;
 
-$(document).ready(function() {
-  $('input[data-role="tagsinput"]').tagsinput();
-
-  //aggiunge i tag dopo che hai cliccato il menu a tendina
-  $('#select-tags, #select-tags-modal').on('change', function() {
-    const selectedOptions = $(this).val();
-    const tagsInput = $('#tags-input');
-    selectedOptions.forEach(option => {
-      if (!tagsInput.tagsinput('items').includes(option)) {
-        tagsInput.tagsinput('add', option);
-      }
-    });
-  });
-
-  $('input[data-role="tagsinput"]').on('itemAdded', function(event) {
-    let $tag = $('input[data-role="tagsinput"]').siblings('.bootstrap-tagsinput').children('.badge');
-    $tag.append('<span data-role="remove" style="margin-left: 10px; cursor: pointer;">&times;</span>');
-  });
-
-  $(document).on('click', '[data-role="remove"]', function(event) {
-    let $tag = $(this).closest('.badge');
-    if ($tag.contents().get(0)) {
-      let tagText = $tag.contents().get(0).nodeValue.trim();
-      $('input[data-role="tagsinput"]').tagsinput('remove', tagText);
-
-      console.log(saveTaginput);
-      // Rimuove il tag anche da saveTaginput
-      saveTaginput = saveTaginput.filter(tag => tag !== tagText);
-      console.log(saveTaginput);
-    }
-  });
-
-  //Aggiunta della funzione di salvataggio dei tag
-  $('#save-tags').on('click', function() {
-    const tagsInput = $('#tags-input').tagsinput('items');
-    console.log('Tags salvati:', tagsInput); 
-    saveTaginput = tagsInput;
-    console.log(saveTaginput);
-  });
-});
-
-$('#save-tags').on('click', function() {
-  const tagsInput = $('#tags-input').tagsinput('items');
-  console.log('Tags salvati:', tagsInput);
-  saveTaginput = tagsInput;
-
-  // Verifica che ci siano tag da inviare
-  if (saveTaginput.length === 0) {
-      window.alert('Devi selezionare almeno una specializzazione.');
-      return;
-  }
-  console.log(saveTaginput);
-});
-
-
+  //Reset della selezione della specializzazione
+  const selectSpecialization = document.getElementById("floatingSelect");
+  selectSpecialization.selectedIndex = 0; //Imposta la prima opzione come selezionata
+}

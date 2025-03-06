@@ -1,3 +1,4 @@
+// Caricamento della navbar al caricamento della pagina
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("navbar-container").innerHTML = `
       <div class="container-fluid">
@@ -20,138 +21,113 @@ document.addEventListener("DOMContentLoaded", function () {
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="../homepage/homepage.html">Home</a>
             </li>
-
           </ul>
         </div>
       </div>
   `;
 });
 
+// Richiamare l'aggiornamento della navbar al caricamento della pagina
 document.addEventListener("DOMContentLoaded", updateUserUI);
 
+// Funzione per aggiornare la navbar dinamicamente
 function updateUserUI() {
-  const navList = document.querySelector(".navbar-nav"); // Seleziona la lista UL principale
+  const navList = document.querySelector(".navbar-nav");
   if (!navList) return;
 
   const token = localStorage.getItem("authToken");
 
-  if (token) {
-    const userRole = localStorage.getItem("userRole"); // "Paziente", "Medico" o "Admin"
-
-    // In base al ruolo, crea il menu appropriato
-    if (userRole === "Admin") {
-      // Se l'utente è autenticato, mostra il dropdown
-      const userDropdown = document.createElement("li");
-      userDropdown.id = "user-dropdown";
-      userDropdown.className = "nav-item dropdown";
-      userDropdown.innerHTML = `
-    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
-    <ul class="dropdown-menu dropdown-menu-end mt-3">
-        <li><a class="dropdown-item" href="../dashboard-admin/dashboard-admin.html">Dashboard Admin</a></li>
-        <li><a class="dropdown-item" href="../elencostudi/elencoStudiMedici.html">Elenco studi medici</a></li>
-        <li><a class="dropdown-item" href="" id="logout-button">Esci</a></li>
-    </ul>
-`;
-
-      // Aggiunge il dropdown alla fine della lista UL
-      navList.appendChild(userDropdown);
-    } else if (userRole === "Medico") {
-      const userDropdown = document.createElement("li");
-      userDropdown.id = "user-dropdown";
-      userDropdown.className = "nav-item dropdown";
-      userDropdown.innerHTML = `
-    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
-    <ul class="dropdown-menu dropdown-menu-end mt-3">
-        <li><a class="dropdown-item" href="../profilo-medico/profilo-medico.html">Dashboard Medico</a></li>
-    <li><a class="dropdown-item" href="" id="logout-button">Esci</a></li>
-    </ul>
-`;
-
-      // Aggiunge il dropdown alla fine della lista UL
-      navList.appendChild(userDropdown);
-    } else if (userRole === "Paziente") {
-      // Se l'utente è autenticato, mostra il dropdown
-      const userDropdown = document.createElement("li");
-      userDropdown.id = "user-dropdown";
-      userDropdown.className = "nav-item dropdown";
-      userDropdown.innerHTML = `
-    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
-    <ul class="dropdown-menu dropdown-menu-end mt-3">
-        <li><a class="dropdown-item" href="../profilo-utente/profilo-utente.html">Dashboard Paziente</a></li>
-        <li><a class="dropdown-item" href="" id="logout-button">Esci</a></li>
-    </ul>
-`;
-
-      // Aggiunge il dropdown alla fine della lista UL
-      navList.appendChild(userDropdown);
-    } else {
-      // Se non c'è un ruolo definito, mostra opzioni di default o non mostra il menu profilo
-      profileDropdown.innerHTML = `
-    <li><a class="dropdown-item" href="/login.html">Login</a></li>
-    <li><a class="dropdown-item" href="/register.html">Registrati</a></li>
+  // Rimuove tutti gli elementi esistenti nella navbar
+  navList.innerHTML = `
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" href="../homepage/homepage.html">Home</a>
+    </li>
   `;
-    }
 
-    // Event listener per il logout
-    document
-      .getElementById("logout-button")
-      .addEventListener("click", async () => {
-        const token = localStorage.getItem("authToken");
+  if (token) {
+    const userRole = localStorage.getItem("userRole");
 
-        if (!token) return;
+    // Definizione dei menu in base ai ruoli
+    const roleMenus = {
+      Admin: [
+        { text: "Dashboard Admin", link: "../dashboard-admin/dashboard-admin.html" },
+        { text: "Elenco studi medici", link: "../elencostudi/elencoStudiMedici.html" },
+      ],
+      Medico: [{ text: "Dashboard Medico", link: "../profilo-medico/profilo-medico.html" }],
+      Paziente: [{ text: "Dashboard Paziente", link: "../profilo-utente/profilo-utente.html" }],
+    };
 
-        try {
-          const response = await fetch("http://localhost:8080/api/logout", {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json",
-            },
-          });
-
-          if (response.ok) {
-            localStorage.clear(); // Rimuove il token dal localStorage solo se il logout è andato a buon fine
-            updateUserUI(); // Aggiorna l'interfaccia utente
-            window.location.href = "../homepage/homepage.html";
-          } else {
-            console.error("Errore nel logout:", await response.json());
-          }
-        } catch (error) {
-          console.error("Errore di connessione:", error);
+    // Creazione del menu dropdown in base al ruolo
+    const dropdown = document.createElement("li");
+    dropdown.className = "nav-item dropdown";
+    dropdown.innerHTML = `
+      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Il mio account</a>
+      <ul class="dropdown-menu dropdown-menu-end mt-3">
+        ${
+          roleMenus[userRole]
+            ?.map(
+              (menuItem) => `<li><a class="dropdown-item" href="${menuItem.link}">${menuItem.text}</a></li>`
+            )
+            .join("") || ""
         }
-      });
-  } else {
-    // Se l'utente non è autenticato, mostra il bottone di registrazione e login
-    // Creazione del primo elemento <li> per la registrazione
+        <li><a class="dropdown-item" href="#" id="logout-button">Esci</a></li>
+      </ul>
+    `;
+    navList.appendChild(dropdown);
 
+    // Aggiunta del listener per il logout
+    document.getElementById("logout-button").addEventListener("click", handleLogout);
+  } else {
+    // Menu per utenti non autenticati
     const registerDropdown = document.createElement("li");
-    registerDropdown.id = "user-dropdown";
     registerDropdown.className = "nav-item dropdown";
     registerDropdown.innerHTML = `
-    <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Registrati gratis</button>
-    <ul class="dropdown-menu dropdown-menu-end mt-3">
-        <li><a class="dropdown-item" href="../register/register.html">Come paziente</a></li>
-        <li><a class="dropdown-item" href="../registerDoctor/register.html"">Come dottore</a></li>
-    </ul>
-`;
+      <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Registrati gratis</button>
+      <ul class="dropdown-menu dropdown-menu-end mt-3">
+          <li><a class="dropdown-item" href="../register/register.html">Come paziente</a></li>
+          <li><a class="dropdown-item" href="../registerDoctor/register.html">Come dottore</a></li>
+      </ul>
+    `;
 
-    // const registerItem = document.createElement("li");
-    // registerItem.className = "nav-item";
-    // registerItem.innerHTML = `<a class="nav-link" onclick="window.location.href='../Register/register.html'" href="#">Registrati gratis</a>`;
-
-    // Creazione del secondo elemento <li> per il login
     const loginItem = document.createElement("li");
     loginItem.className = "nav-item";
-    loginItem.innerHTML = `<a class="nav-link" onclick="window.location.href='../Login/login.html'" href="#">Login</a>`;
+    loginItem.innerHTML = `<a class="nav-link" href="../Login/login.html">Login</a>`;
 
-    // Aggiunta degli elementi al menu di navigazione
     navList.appendChild(registerDropdown);
     navList.appendChild(loginItem);
+  }
+}
 
-    // Aggiungi l'event listener per il login simulato
-    // document.getElementById("login-button").addEventListener("click", () => {
-    //   localStorage.setItem("authToken", "token-di-esempio"); // Qui metteresti il vero token ricevuto dal backend
-    //   updateUserUI();
-    // });
+// Funzione per gestire il logout
+async function handleLogout() {
+  const token = localStorage.getItem("authToken");
+
+  if (!token) {
+    console.error("Nessun token trovato per il logout.");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:8080/api/logout", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+    console.log("Status Response:", response.status);
+
+    if (response.ok) {
+      console.log("Logout avvenuto con successo");
+      localStorage.removeItem("authToken"); //Rimuove solo il token
+      localStorage.removeItem("userRole"); //Rimuove anche il ruolo
+      updateUserUI(); //Aggiorna la UI
+      window.location.href = "../homepage/homepage.html";
+    } else {
+      const errorData = await response.json();
+      console.error("Errore nel logout:", errorData);
+    }
+  } catch (error) {
+    console.error("Errore di connessione:", error);
   }
 }
