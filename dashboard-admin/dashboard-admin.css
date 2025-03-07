@@ -1,4 +1,4 @@
-* {
+* { 
     margin: 0;
     padding: 0;
 }
@@ -116,15 +116,16 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-    justify-content: flex-start;
 }
 
-.main {
+.main .container .row .col-lg-12{
     position: absolute;
-    left: 300px;
-    width: calc(100% - 300px);
-    margin-top: 20px;
+    left: 208px;
+    width: 90%;
+    margin-top: 20px; 
 }
+
+
 
 .card {
     text-align: center;
@@ -132,29 +133,49 @@
     box-shadow: 0 7px 25px rgba(94, 94, 94, 0.8);
     font-size: 15px;
     flex: 1 1 calc(33.3333% - 20px); 
+    color:#727273; 
+    margin-top: 90px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.44);
+}
+
+.right-icon {
+    position: absolute;
+    width: 59px;
+    height: 59px;
+    right: 15px;
+    top: 49%;
+    transform: translateY(-50%); 
+    background-color: #2ABFBF; 
+    border-radius: 50%; 
+    padding: 11px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+.right-icon i {
+    color: white; 
+    font-size: 30px; 
+}
+
+.row {
+    justify-content: flex-end;
+    gap: 20px;
 }
 
 .card-title {
     text-align: center;
 }
-
-.btn {
-    display: block;
-    margin: 0 auto;
-    font-size: 15px;
+.grafico {
+      display: flex;
+      justify-content:flex-start; 
+      margin: 35px 0 0 350px;
 }
-
-.btn-primary {
-    background-color: #2abfbf !important;
-    border-color: #2abfbf !important;
-    color: #fff !important;
-    border-radius: 20px !important;
-}
-
-.btn-primary:hover {
-    background-color: #269c9c !important;
-    border-color: #269c9c !important;
-    border-radius: 20px !important;
+#myDoughnutChart {
+    width: 30% !important;
+    height: 30%!important;
+    
 }
 
 .navigation ul li.active {
@@ -164,7 +185,6 @@
 .navigation ul li.active a {
     color: #727273;
 }
-
 
 .navigation ul li.active a::before {
     content: "";
@@ -192,7 +212,6 @@
     pointer-events: none;
 }
 
-
 /* media query per 768px*/
 @media screen and (max-width: 768px) {
     .title {
@@ -215,12 +234,8 @@
     .card {
         flex: 1 1 calc(50% - 20px); 
     }
-
-    .btn {
-        font-size: 14px;
-        padding: 7px 14px;
-    }
 }
+
 /* media query per 576px*/
 @media screen and (max-width: 576px) {
     .title {
@@ -243,9 +258,15 @@
     .card {
         flex: 1 1 100%;
     }
+}
 
-    .btn {
-        font-size: 12px;
-        padding: 5px 10px;
-    }
+.pagination {
+    --bs-pagination-color: black;
+}
+
+.active > .page-link, .page-link.active {
+    z-index: 3;
+    color: var(--bs-pagination-active-color);
+    background-color: #2ABFBF;
+    border-color: #2ABFBF;
 }

@@ -66,4 +66,54 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById(target).style.display = "block";
         });
     });
+
+
+    /*grafico */
+    const ctx = document.getElementById('myDoughnutChart').getContext('2d');
+    const data = {
+      labels: [
+        'Iscritti',
+        'Prenotati',
+        'Medici'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [300, 50, 100],
+        backgroundColor: [
+          'rgb(255, 99, 132)',  // Rosso
+          'rgb(54, 162, 235)',  // Blu
+          'rgb(255, 205, 86)'   // Giallo
+        ],
+        hoverOffset: 4
+      }]
+    };
+  
+    const config = {
+      type: 'doughnut',  // Tipo di grafico: ciambella
+      data: data,
+      options: {
+        responsive: true, 
+        cutout: '40%', // Il grafico è reattivo
+        plugins: {
+          legend: {
+            position: 'top',  // Posizione della legenda
+          },
+          tooltip: {
+            callbacks: {
+              label: function(tooltipItem) {
+                return tooltipItem.label + ': ' + tooltipItem.raw; // Mostra la percentuale nei tooltip
+              }
+            }
+          }
+        }
+      }
+    };  
+    // Crea il grafico
+    const myDoughnutChart = new Chart(ctx, config);
+
+    
+
+    
 });
+
+
