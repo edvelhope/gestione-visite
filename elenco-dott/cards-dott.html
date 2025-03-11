@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="logo" href="../navbar/logo.png" id="icona">   
+    <link rel="icon" type="logo" href="../navbar/logo.png" id="icona">
     <title>Elenco Dottori</title>
     <!--link-->
     <link
@@ -20,6 +20,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+        <!-- Core FullCalendar bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
+        <!-- Locale italiano per FullCalendar -->
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/locales/it.global.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link href="../elencostudi/CSS/style.css" rel="stylesheet" />
     <link href="../navbar/navbar.css" rel="stylesheet" />
@@ -49,30 +53,33 @@
     </form>
 
     <!--contenitore delle cards-->
-<div id="contenitore">
+<div class="container">
     <!-- Medico 1 -->
-    <div class="card p-3 shadow" style="max-width: 400px;">
-        <div class="d-flex align-items-center custom-card">
-            <img src="card-img.jpg" alt="Immagine medico" class="me-3" width="80" height="80">
-            <div>
-                <h5 class="mb-0">Dott. Mario Rossi</h5>
-                <small class="text-muted">Cardiologo</small>
+    <div class="card p-3 shadow">
+        <div class="d-flex">
+            <!-- Left column: doctor info and details -->
+            <div class="flex-grow-1 me-3">
+                <div class="d-flex align-items-center custom-card">
+                    <img src="card-img.jpg" alt="Immagine medico" class="me-3" width="80" height="80">
+                    <div>
+                        <h5 class="mb-0">Dott. Mario Rossi</h5>
+                        <small class="text-muted">Cardiologo</small>
+                    </div>
+                </div>
+                <div class="card-body px-0">
+                    <p>Visita Cardiologica</p>
+                    <p>Centro Medico Salute - Via San Luca 10</p>
+                    <p>Milano</p>
+                    <p>Prezzo: 150€</p>
+                    <div>
+                        <a href="../prenotazione/prenotazione.html" class="btn btn-primary">Prenota Visita</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="card-body">
-            <p>Visita Cardiologica</p>
-            <p>Centro Medico Salute - Via San Luca 10</p>
-            <p>Milano</p>
-            <p>Prezzo: 150€</p>
-            <select class="form-select mb-2">
-                <option selected>Scegli orario</option>
-                <option>09:00</option>
-                <option>10:30</option>
-                <option>15:00</option>
-                <option>17:30</option>
-            </select>
-            <div class="text-center">
-                <a href="../prenotazione/prenotazione.html" class="btn btn-primary">Prenota Visita</a>
+
+            <!-- Right column: calendar -->
+            <div class="ms-3" style="min-width: 300px;">
+                <div id="calendar"></div>
             </div>
         </div>
     </div>
@@ -220,5 +227,6 @@
     <script src="cards-dott.js"></script>
     <script src="../elencostudi/JS/footer.js"></script>
     <script src="../navbar/navbar.js"></script>
+    <script src="../calendar/calendar.js"></script>
   </body>
 </html>

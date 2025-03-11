@@ -3,7 +3,6 @@ body {
 }
 
 .card{
-  width: 400px;
  justify-content: left;
 
  border-radius: 20px;
@@ -12,12 +11,7 @@ body {
  margin-bottom: 15px;
 
 }
-#contenitore{
-  display: flex;
-  justify-content:space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-}
+
 .little{
   margin-right: 5px;
 }
@@ -29,7 +23,7 @@ body {
   justify-content: left !important;
   margin-left: 10px;
   margin-top: 10px;
-  
+
 }
 
 .card-body{
