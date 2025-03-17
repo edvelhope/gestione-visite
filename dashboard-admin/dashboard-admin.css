@@ -1,272 +1,95 @@
-* { 
+* {
     margin: 0;
     padding: 0;
 }
-
-.container {
-    position: relative;
-    width: 100%;
+body {
+    font-family: "Montserrat", sans-serif !important;
 }
-
-.navigation {
-    position: fixed;
-    left: 0;
-    width: 300px;
-    height: 100%;
-    background-color: #2ABFBF;
-    border-left: 10px solid var(--blue);
-    transition: 0.5s;
-    overflow: hidden;
-    margin-top: 60px;
+.dashboard-title {
+    margin-left: 11px;
+    color: grey;
 }
-
-.navigation ul {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 40px;
-}
-
-.navigation ul li {
-    position: relative;
-    width: 100%;
-    list-style: none;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    margin-bottom: 50px;
-}
-
-.navigation ul li:hover {
-    background-color: white;
-}
-
-.navigation ul li a {
-    position: relative;
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding-top: 3px;
-    padding-bottom: 3px;
-}
-
-.navigation ul li:hover a {
-    color: #727273;
-}
-
-.navigation ul li a .icon {
-    position: relative;
-    display: block;
-    min-width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-}
-
-.navigation ul li a .icon i {
-    font-size: 1.75rem;
-}
-
-.navigation ul li a .title {
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-    text-align: start;
-    white-space: nowrap;
-}
-
-/*curva fuori*/
-.navigation ul li:hover a::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 35px 35px 0 10px white;
-    pointer-events: none;
-}
-
-.navigation ul li:hover a::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: -50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 35px -35px 0 10px white;
-    pointer-events: none;
-}
-
-.content {
-    display: none;
-    margin-top: 10px;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-}
-
-.main .container .row .col-lg-12{
-    position: absolute;
-    left: 208px;
-    width: 90%;
-    margin-top: 20px; 
-}
-
-
 
 .card {
-    text-align: center;
-    margin: 10px;
-    box-shadow: 0 7px 25px rgba(94, 94, 94, 0.8);
-    font-size: 15px;
-    flex: 1 1 calc(33.3333% - 20px); 
-    color:#727273; 
-    margin-top: 90px;
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 24px;
-    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.44);
+    width: 100%; 
+    padding: 20px;
 }
 
-.right-icon {
-    position: absolute;
-    width: 59px;
-    height: 59px;
-    right: 15px;
-    top: 49%;
-    transform: translateY(-50%); 
-    background-color: #2ABFBF; 
-    border-radius: 50%; 
-    padding: 11px; 
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+.nav-link.active, .nav-pills .show > .nav-link {
+    background-color: #2abfbf !important; 
+    border-color: #2abfbf !important; 
+    color: #fff !important; 
+    border-radius: 0 !important;
+}
+.nav-link, .nav-pills .show > .nav-link {
+    color: #000000 !important; 
+    border-radius: 0 !important;
+}
+.pagination .page-link {
+    color: black; 
+}
+.pagination .page-item.active .page-link {
+    background-color:#2abfbf; 
+    border-color:#2abfbf; 
 }
 
-.right-icon i {
-    color: white; 
-    font-size: 30px; 
-}
 
-.row {
-    justify-content: flex-end;
-    gap: 20px;
-}
 
-.card-title {
-    text-align: center;
-}
-.grafico {
-      display: flex;
-      justify-content:flex-start; 
-      margin: 35px 0 0 350px;
-}
-#myDoughnutChart {
-    width: 30% !important;
-    height: 30%!important;
-    
-}
 
-.navigation ul li.active {
-    background-color: white;
-}
+/* media query*/
 
-.navigation ul li.active a {
-    color: #727273;
-}
 
-.navigation ul li.active a::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 35px 35px 0 10px white; 
-    pointer-events: none;
-}
-
-.navigation ul li.active a::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: -50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 35px -35px 0 10px white; 
-    pointer-events: none;
-}
-
-/* media query per 768px*/
 @media screen and (max-width: 768px) {
-    .title {
-        display: none !important;
+    .user-img, #photo {
+        width: 100px;
+        height: 100px;
     }
 
-    .navigation {
-        width: 200px;
+    #uploadbtn {
+        margin-top: 80px;
+        transform: translateX(-50%);
+        left: 50%;
     }
 
-    .main {
-        left: 220px;
-        width: calc(100% - 220px); 
+    .info {
+        margin: 40px 10px;
     }
 
-    .row {
-        justify-content: space-between; 
+    .titoloPrenotazioni {
+        margin: 30px 0;
     }
 
-    .card {
-        flex: 1 1 calc(50% - 20px); 
-    }
-}
-
-/* media query per 576px*/
-@media screen and (max-width: 576px) {
-    .title {
-        display: none !important;
-    }
-
-    .navigation {
-        width: 124px;
-    }
-
-    .main {
-        left: 130px;
-        width: calc(100% - 130px); 
-    }
-
-    .row {
-        justify-content: space-between; 
-    }
-
-    .card {
-        flex: 1 1 100%;
+    .container {
+        margin-top: 10px;
     }
 }
 
-.pagination {
-    --bs-pagination-color: black;
+
+@media screen and (max-width: 480px) {
+    .user-img, #photo {
+        width: 90px;
+        height: 90px;
+        margin: 5% auto;
+    }
+
+    #uploadbtn {
+        margin-top: 60px;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .info {
+        margin: 30px 10px;
+    }
+
+    .input-container input {
+        font-size: 14px;
+    }
+
+    .titoloPrenotazioni {
+        margin: 20px 0;
+    }
 }
 
-.active > .page-link, .page-link.active {
-    z-index: 3;
-    color: var(--bs-pagination-active-color);
-    background-color: #2ABFBF;
-    border-color: #2ABFBF;
-}
+
+
