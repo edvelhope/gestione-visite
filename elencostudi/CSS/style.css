@@ -1,115 +1,73 @@
-/* Impostazioni generali */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Montserrat', sans-serif !important;
-}
-
-/* Wrapper principale */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-/* Contenuto principale */
-#main {
-    flex: 1;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-}
-
 /* Footer */
-#bottom {
-    background-color: #727273;
-    color: white;
-    padding: 5px 20px;
-    width: 100%;
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 50px 0 10px 0;
+}
+
+
+#footer {
+    background: #727273 !important;
+}
+#footer h5{
+	padding-left: 10px;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
     
-    margin: 0;
+}
+#footer ul.social li{
+	padding: 20px 0 5px 0;
+    
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+    
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#ffffff;
+    
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
 }
 
-#bottom .container {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Margine superiore extra nel footer */
-#bottom .row {
-    margin-top: 20px; /* Modifica per maggiore spazio sopra */
-    padding: 0;
-}
-
-/* Stile per le liste nel footer */
-#bottom ul {
-    list-style-type: none;
+@media (max-width:767px){
+	#footer h5 {
     padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
 }
-
-#bottom ul li a {
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
 }
-
-#bottom ul li a:hover {
-    text-decoration: underline;
-    color: #f0f0f0;
-}
-
-/* Sezione social */
-.social {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
-    margin-bottom: 30px !important; /* Aumentato lo spazio sotto */
-}
-
-/* Stile contatti */
-.info-contatti {
-    margin-top: 0px;
-}
-
-.icone {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    color: white;
-    margin-bottom: 10px !important;
-}
-
-.icone i {
-    font-size: 25px;
-    margin-right: 10px;
-}
-
-.icone span {
-    font-size: 18px;
-}
-
-/* Testo impresa */
-#bottom .col p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-<<<<<<< HEAD
-/* Isolamento del footer */
-.footer-container {
-    width: 100%;
-    display: block;
-}
-=======
-.custom-btn {
-    color: rgb(226, 226, 226);
-}
-
->>>>>>> 9f67cc8a184ed5a830366ca16fcd2102998f8ef7
